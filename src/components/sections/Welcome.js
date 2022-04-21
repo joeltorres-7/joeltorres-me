@@ -1,7 +1,5 @@
 import * as React from 'react'
 import Layout from '../Layout';
-import Navbar from "../Navbar";
-import SocialNav from './SocialNav';
 import styled from 'styled-components';
 
 // Styles
@@ -31,8 +29,6 @@ const SpanBox = styled.span`
 const Welcome = () => {
     return (
         <Layout>
-            <Navbar />
-            <SocialNav />
             <SectionWelcome>
                 <h2>
                     Ahoy! My name is

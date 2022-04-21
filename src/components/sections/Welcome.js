@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Layout from '../Layout';
 import styled from 'styled-components';
+import BackDots from '../BackDots';
 
 // Styles
 
@@ -29,6 +30,7 @@ const SpanBox = styled.span`
 const Welcome = () => {
     return (
         <Layout>
+            <BackDots/>
             <SectionWelcome>
                 <h2>
                     Ahoy! My name is

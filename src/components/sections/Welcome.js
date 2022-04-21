@@ -2,6 +2,7 @@ import * as React from 'react'
 import Layout from '../Layout';
 import styled from 'styled-components';
 import BackDots from '../BackDots';
+import ScrollMessage from '../ScrollMessage';
 
 // Styles
 
@@ -37,6 +38,7 @@ const Welcome = () => {
                 </h2>
                 <h1>Joel Torres</h1>
                 <h1>I'm a <SpanBox>web developer</SpanBox></h1>
+                <ScrollMessage/>
             </SectionWelcome>
         </Layout>
     )

@@ -12,7 +12,7 @@ const SectionWelcome = styled.section`
     align-items: center;
     justify-content: center;
     padding: 0;
-    min-height: 80vh;
+    min-height: 100vh;
 
     h1 {
         display: inline-flex;

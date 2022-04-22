@@ -14,13 +14,27 @@ const StyledNavbar = styled.nav`
     align-items: center;
 
     p {
-        padding: 1rem 2rem;
+        padding: .6rem 1.2rem;
+        margin: .6rem .8rem;
         font-weight: 600;
         transition-duration: .5s;
+        border-radius: 12px;
 
         &:hover {
             color: #EF476F;
             cursor: pointer;
+        }
+
+        &.yellow:hover {
+          color: #FFD166;
+        }
+
+        &.blue:hover {
+          color: #118AB2;
+        }
+
+        &.green:hover {
+          color: #06D6A0;
         }
     }
 
@@ -32,41 +46,13 @@ const StyledNavbar = styled.nav`
 `;
 
 const Navbar = () => {
-
-    const [show, setShow] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
-  
-    const controlNavbar = () => {
-      if (typeof window !== 'undefined') { 
-        if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
-          setShow(false); 
-        } else { // if scroll up show the navbar
-          setShow(true);  
-        }
-  
-        // remember current page location to use in the next move
-        setLastScrollY(window.scrollY); 
-      }
-    };
-  
-    useEffect(() => {
-      if (typeof window !== 'undefined') {
-        window.addEventListener('scroll', controlNavbar);
-  
-        // cleanup function
-        return () => {
-          window.removeEventListener('scroll', controlNavbar);
-        };
-      }
-    }, [lastScrollY]);
-
     return (
         <StyledNavbar>
             <p>about</p>
-            <p>project</p>
+            <p className='yellow'>project</p>
             <img src={Logo}/>
-            <p>illustrations</p>
-            <p>let's talk</p>
+            <p className='blue'>illustrations</p>
+            <p className='green'>let's talk</p>
         </StyledNavbar>
     )
 }

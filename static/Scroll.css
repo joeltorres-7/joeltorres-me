@@ -1,0 +1,15 @@
+ /* Scrollbar Styles */
+ html {
+  scrollbar-width: thin;
+  scrollbar-color: #FFD166;
+}
+body::-webkit-scrollbar {
+  width: 7px;
+}
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #FFD166;
+  border-radius: 10px;
+}

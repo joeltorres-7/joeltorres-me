@@ -21,15 +21,10 @@ const SectionWelcome = styled.section`
 
     // Set Scrollbar for Firefox
 
-    .custom-scrollbars__content {
-  overflow: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.custom-scrollbars__content::-webkit-scrollbar {
-  display: none;
-}
+    html {
+        overflow-y: scroll;
+        scrollbar-color: #0A4C95 #C2D2E4;
+    }
 
     // Set scrollbar default for Chrome
 

@@ -252,7 +252,7 @@ const Projects = () => {
                 <FeaturedProject>
                     <Description className='right'>
                         <img src={SenaLogo}/>
-                        <p>Learning a language is hard. But, it doesn't have to be that way.<br/><br/>Gengo is a project to show anyone in the world, no matter their background or age, can learn any language and reach fluency in 4 months.</p>
+                        <p>As an opportunity to improve the design, responsibility and accessibility from SENA Territorium, a Colombian web platform used for educational purposes, I gave my first steps in Web Design & Development through this project.</p>
                         <div className='tags'>
                             <span>HTML5</span>
                             <span>SCSS</span>

@@ -1,9 +1,11 @@
 import * as React from 'react'
 import Layout from '../Layout';
 import styled from 'styled-components';
-import SmartphoneBorder from '../../images/elements/phone-frame.png';
 import GengoPreview from '../../images/previews/gengo-workflow.mp4';
 import GengoLogo from '../../images/elements/gengo-logo.png';
+import SenaPreview from '../../images/previews/sena-workflow.mp4';
+import SenaLogo from '../../images/elements/sena-responsive-logo.svg';
+import SenaPoster from '../../images/elements/sena-responsive-poster.png';
 
 // Styles
 
@@ -89,6 +91,30 @@ const Device = styled.div`
         border-bottom-left-radius: 2.334vh;
         border-bottom-right-radius: 2.334vh;
     }
+
+    .preview {
+        object-fit: fill;
+    }
+
+    &:hover {
+        animation: playful .3s linear 1;
+        cursor: pointer;
+    }
+
+    @keyframes playful {
+        0% {
+		transform: rotate(0deg);
+	    }
+	    25% {
+	    	transform: rotate(1deg);
+	    }
+	    75% {
+	    	transform: rotate(-1deg);
+	    }
+	    100% {
+	    	transform: rotate(0deg);
+	    }
+    }
 `
 
 const Description = styled.div`
@@ -105,7 +131,7 @@ const Description = styled.div`
         font-size: 0.9rem;
         color: #EF476F;
         padding: 1.8rem;
-        min-width: 23vw;
+        min-width: 30vw;
         width: fit-content;
         text-align: left;
         line-height: 1.3rem;
@@ -148,6 +174,38 @@ const Description = styled.div`
         }
     }
 
+    &.right {
+        img, p, a {
+            margin-left: 0rem;
+            margin-right: 3rem;
+        }
+
+        span, p {
+            color: #118AB2;
+        }
+
+        img {
+            margin-left: 2rem;
+        }
+
+        a {
+            align-self: flex-end;
+            background: #118AB2;
+
+            &:hover {
+            cursor: pointer;
+            -moz-box-shadow: 2px 4px 10px rgba(17, 138, 178, 0.6);
+            -webkit-box-shadow: 2px 4px 10px rgba(17, 138, 178, 0.6);
+            box-shadow: 2px 4px 10px rgba(17, 138, 178, 0.6);
+            animation: playful-rotation .3s linear 1;
+        }
+        }
+
+        .tags {
+            margin: 1rem 0px .5rem 0rem;
+        }
+    }
+
     @keyframes playful-rotation {
         0% {
 		transform: rotate(0deg);
@@ -171,17 +229,10 @@ const Projects = () => {
                 <h2>Projects</h2>
                 <p>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
 
-                <FeaturedProject className='left'>
+                <FeaturedProject>
                     <Device>
                         <div className='notch'></div>
-                        <video 
-                        loop
-                        muted
-                        autoplay="autoplay"
-                        width="190"
-                        className='preview'
-                        disablePictureInPicture
-                        controlsList="nodownload">
+                        <video loop muted autoplay="autoplay" width="200" className='preview' disablePictureInPicture controlsList="nodownload">
                             <source src={GengoPreview}  type="video/mp4"/>
                         </video>
                     </Device>
@@ -196,6 +247,26 @@ const Projects = () => {
                         </div>
                         <a>More about Gengo</a>
                     </Description>
+                </FeaturedProject>
+
+                <FeaturedProject>
+                    <Description className='right'>
+                        <img src={SenaLogo}/>
+                        <p>Learning a language is hard. But, it doesn't have to be that way.<br/><br/>Gengo is a project to show anyone in the world, no matter their background or age, can learn any language and reach fluency in 4 months.</p>
+                        <div className='tags'>
+                            <span>HTML5</span>
+                            <span>SCSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive Design</span>
+                        </div>
+                        <a>More about Gengo</a>
+                    </Description>
+                    <Device>
+                        <div className='notch'></div>
+                        <video loop muted width="200" autoplay="autoplay" className='preview' poster={SenaPoster} controlsList="nodownload">
+                            <source src={SenaPreview}  type="video/mp4"/>
+                        </video>
+                    </Device>
                 </FeaturedProject>
 
             </SectionProjects>

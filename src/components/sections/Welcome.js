@@ -18,6 +18,40 @@ const SectionWelcome = styled.section`
         display: inline-flex;
         margin: .1rem;
     }
+
+    // Set Scrollbar for Firefox
+
+    .custom-scrollbars__content {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.custom-scrollbars__content::-webkit-scrollbar {
+  display: none;
+}
+
+    // Set scrollbar default for Chrome
+
+     /* width */
+    html::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    html::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    html::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    html::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    } 
 `;
 
 const SpanBox = styled.span`

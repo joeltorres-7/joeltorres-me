@@ -7,6 +7,7 @@ import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
 
 // markup
+
 const IndexPage = () => {
   return (
     <main>

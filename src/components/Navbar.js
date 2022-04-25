@@ -2,6 +2,7 @@ import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
 import Logo from '../images/logo/joeltorres-logo.svg'
+import { Link } from 'gatsby';
 
 // Markup
 
@@ -29,7 +30,10 @@ const StyledNavbar = styled.nav`
       box-shadow: 0px 10px 5px rgb(239, 71, 111, 0.0);
     }
 
-    p {
+    .link {
+        text-decoration: none;
+        color: currentColor;
+        font-size: 0.9rem;
         padding: .6rem 1.2rem;
         margin: .6rem .8rem;
         font-weight: 600;
@@ -84,11 +88,11 @@ const Navbar = () => {
 
   return (
       <StyledNavbar id='navbar' className='hide-shadow'>
-        <p>about</p>
-        <p className='yellow'>project</p>
+        <Link href='#about' className='link'>about</Link>
+        <Link href='#projects' className='yellow link'>projects</Link>
         <img src={Logo} />
-        <p className='blue'>illustrations</p>
-        <p className='green'>let's talk</p>
+        <Link href='#illustrations' className='blue link'>illustrations</Link>
+        <Link href='#lets-talk' className='green link'>let's talk</Link>
       </StyledNavbar>
   )
 }

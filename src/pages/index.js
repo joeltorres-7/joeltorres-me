@@ -5,6 +5,9 @@ import Navbar from "../components/Navbar";
 import SocialNav from '../components/SocialNav';
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
+import Illustrations from "../components/sections/Illustrations";
+import LetsTalk from "../components/sections/LetsTalk";
+import Footer from "../components/Footer";
 
 // markup
 
@@ -15,8 +18,11 @@ const IndexPage = () => {
         <Navbar />
         <SocialNav />
         <Welcome />
-        <About />
-        <Projects />
+        <About id="about" />
+        <Projects id="projects" />
+        <Illustrations id="illustrations" />
+        <LetsTalk id="lets-talk" />
+        <Footer />
       </Layout>
     </main>
   )

@@ -149,6 +149,7 @@ const Description = styled.div`
         width: fit-content;
         border-radius: 2rem;
         transition-duration: 0.3s;
+        text-decoration: none;
 
         &:hover {
             cursor: pointer;
@@ -245,7 +246,7 @@ const Projects = () => {
                             <span>UI/UX</span>
                             <span>Project Management</span>
                         </div>
-                        <a>More about Gengo</a>
+                        <a target="_blank">More about Gengo</a>
                     </Description>
                 </FeaturedProject>
 
@@ -259,7 +260,7 @@ const Projects = () => {
                             <span>JavaScript</span>
                             <span>Responsive Design</span>
                         </div>
-                        <a>More about Gengo</a>
+                        <a href='https://www.behance.net/gallery/130902295/SENA-Territorium-Minimal-Redesign' target="_blank">See on Behance</a>
                     </Description>
                     <Device>
                         <div className='notch'></div>

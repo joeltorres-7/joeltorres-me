@@ -13,18 +13,16 @@ import Footer from "../components/Footer";
 
 const IndexPage = () => {
   return (
-    <main>
-      <Layout>
-        <Navbar />
-        <SocialNav />
-        <Welcome />
-        <About id="about" />
-        <Projects id="projects" />
-        <Illustrations id="illustrations" />
-        <LetsTalk id="lets-talk" />
-        <Footer />
-      </Layout>
-    </main>
+    <Layout>
+      <Navbar />
+      <SocialNav />
+      <Welcome />
+      <About id="about" />
+      <Projects id="projects" />
+      <Illustrations id="illustrations" />
+      <LetsTalk id="lets-talk" />
+      <Footer />
+    </Layout>
   )
 }
 

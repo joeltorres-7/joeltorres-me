@@ -1,53 +1,52 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import Layout from "../components/Layout"
+import Navbar from "../components/Navbar";
+import SocialNav from '../components/SocialNav';
+import styled from 'styled-components';
+import BackDots from "../components/BackDots";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const NotFoundLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-height: 100vh;
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+  h2 {
+    background: #EF476F;
+    color: #fff;
+    border-radius: 12px;
+    padding: .6rem .9rem;
+    margin: 0 .8rem;
+    font-size: 2.8rem;
+    -moz-box-shadow: 2px 4px 10px rgba(239, 71, 111, 0.6);
+    -webkit-box-shadow: 2px 4px 10px rgba(239, 71, 111, 0.6);
+    box-shadow: 2px 4px 10px rgba(239, 71, 111, 0.6);
+  }
+
+  h3 {
+      display: inline-flex;
+      margin: 2rem;
+      max-width: 30vw;
+      text-align: center;
+      font-weight: 600;
+  }
+`
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout>
+      <Navbar />
+      <SocialNav />
+      <BackDots/>
+      <NotFoundLayout>
+        <h2>404</h2>
+        <h3>The page you're looking for doesn't exist or has been moved.</h3>
+      </NotFoundLayout>
+    </Layout>
   )
 }
 

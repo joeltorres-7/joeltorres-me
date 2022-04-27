@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SkillBar = styled.nav`
+const SkillItem = ({ children, color }) => {
+
+    const SkillBar = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +14,7 @@ const SkillBar = styled.nav`
     }
 
     span {
-        color: #FFD166;
+        color: ${color};
     }
 
     div {
@@ -43,11 +45,11 @@ const SkillBar = styled.nav`
             width: 10px;
             height: 10px;
             border-radius: 100%;
-            border: 0.1rem #FFD166 solid;
+            border: 0.1rem ${color} solid;
         }
     
         &.fill {
-            background: #FFD166;
+            background: ${color};
         }
     }
 
@@ -64,9 +66,8 @@ const SkillBar = styled.nav`
         opacity: 100;
       }
     }
-`
+    `
 
-const SkillItem = ({ props, children }) => {
     return (
         <SkillBar>
             {children}

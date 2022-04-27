@@ -28,7 +28,7 @@ const SectionProjects = styled.section`
     p {
         color: currentColor;
         text-align: center;
-        max-width: 60vh;
+        max-width: 30vw;
     }
 
     img {

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SkillItem from '../SkillItem';
+import PropTypes from 'prop-types';
 
 const SkillDetails = styled.div`
     display: flex;
@@ -12,10 +13,10 @@ const SkillDetails = styled.div`
     }
 `
 
-const Programming = () => {
+const Programming = ({ color }) => {
     return (
         <SkillDetails>
-            <SkillItem>
+            <SkillItem color={color}>
                 <h4 className='top'>Programming Languages</h4>
                 <div class="skill-bar">
                     <span>Javascript (ES6+)</span>

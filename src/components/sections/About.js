@@ -1,9 +1,11 @@
-import * as React from 'react';
+import React, { setState, setEffect } from 'react';
 import Layout from '../Layout';
 import styled from 'styled-components';
-import ScrollMessage from '../ScrollMessage';
 import selfPortrait from '../../images/elements/portrait-joel.png';
 import Programming from '../skill-bars/Programming';
+import Design from '../skill-bars/Design';
+import Languages from '../skill-bars/Languages';
+import PropTypes from 'prop-types';
 
 const SectionAbout = styled.section`
     display: flex;
@@ -71,7 +73,55 @@ const StructureData = styled.div`
     }
 `
 
-const SkillGuide = styled.div`
+const SkillsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+
+const skillTitleArray = ["Development", "Design", "Languages"];
+const skillColorArray = ["#FFD166", "#EF476F", "#118AB2"];
+
+// Markup
+
+const About = () => {
+
+    // Hooks
+
+    const [currentSkillTitle, setCurrentSkillTitle] = React.useState('Development');
+    const [skillColor, setSkillColor] = React.useState('#FFD166');
+
+    // OnClick functions
+
+    const countSkill = React.useRef(0);
+    const skillArray = [<Programming color={skillColor} />, <Design color={skillColor} />, <Languages color={skillColor} />];
+    
+    const [currentSkill, setCurrentSkill] = React.useState(<Programming color={skillColor} />);
+
+    const previousSkill = () => {
+        countSkill.current  = countSkill.current != 0 ? countSkill.current - 1 : 2;
+        setCurrentSkill(skillArray[countSkill.current]);
+        setCurrentSkillTitle(skillTitleArray[countSkill.current]);
+        setSkillColor(skillColorArray[countSkill.current]);
+    }
+
+    const nextSkill = () => {
+        countSkill.current  = countSkill.current < 2 ? countSkill.current + 1 : 0;
+        setCurrentSkill(skillArray[countSkill.current]);
+        setCurrentSkillTitle(skillTitleArray[countSkill.current]);
+        setSkillColor(skillColorArray[countSkill.current]);
+    }
+
+    React.useEffect(() => {
+        console.log(skillColor)
+        if (countSkill == 1 && skillColor == "#FFD166") {
+            skillColor = "#EF476F";
+        }
+
+    }, [skillColor]);
+
+    const SkillGuide = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -81,7 +131,7 @@ const SkillGuide = styled.div`
     h4 {
         color: #fff;
         font-weight: 600;
-        background: #FFD166;
+        background: ${skillColor};
         padding: .7rem 1.7rem;
         border-radius: 14px;
     }
@@ -89,6 +139,7 @@ const SkillGuide = styled.div`
     svg {
         margin: 1rem;
         padding: 1rem;
+        fill: ${skillColor};
         transition-duration: .3s;
 
         &:hover {
@@ -103,52 +154,7 @@ const SkillGuide = styled.div`
             transform: translateX(.2rem);
         }
     }
-
-    // Skill classes
-
-    .programming {
-
-        h4 {
-            background: #FFD166;
-        }
-
-        svg {
-            fill: #FFD166;
-        }
-    }
-
-    .design {
-
-        h4 {
-            background: #EF476F;
-        }
-
-        svg {
-            fill: #EF476F;
-        }
-        
-    }
-
-    .languages {
-
-        h4 {
-            background: #118AB2;
-        } svg {
-            fill: #118AB2;
-        }
-    }
-`
-
-const SkillsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
-
-// Markup
-
-const About = () => {
+    `
 
     // View
 
@@ -164,17 +170,29 @@ const About = () => {
                 <p>Here are some of my skills and technologies I've worked with so far:</p>
 
                 <SkillsContainer>
-                    <SkillGuide>
-                        <svg className="back-skill" viewBox="-100.9 99.1 61.9 105.9" fill="#FFD166" width="12px" margin-right="4px"><path d="M-98.2 158.8l43.5 43.5c1.7 1.7 4 2.7 6.5 2.7s4.8-1 6.5-2.7c1.7-1.7 2.7-4 2.7-6.5s-1-4.8-2.7-6.5l-37.2-37.2 37.2-37.2c1.7-1.7 2.7-4 2.7-6.5s-1-4.8-2.6-6.5c-1.8-1.9-4.2-2.8-6.6-2.8-2.3 0-4.6.9-6.5 2.6-11.5 11.4-41.2 41-43.3 43l-.2.2c-3.6 3.6-3.6 10.3 0 13.9z"></path></svg>
-                        <h4 id='skillset-title'>Development</h4>
-                        <svg className="next-skill" viewBox="-100.9 99.1 61.9 105.9" fill="#FFD166" width="12px" margin-left="4px"><path d="M-41.7 145.3l-43.5-43.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8 1-6.5 2.7c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.7 6.5L-61 152l-37.2 37.2c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.6 6.5c1.8 1.9 4.2 2.8 6.6 2.8 2.3 0 4.6-.9 6.5-2.6 11.5-11.4 41.2-41 43.3-43l.2-.2c3.6-3.6 3.6-10.4 0-13.9z"></path></svg>
+                    <SkillGuide className='skill-styles'>
+                        <svg onClick={previousSkill} className="back-skill" viewBox="-100.9 99.1 61.9 105.9" fill="#FFD166" width="12px" margin-right="4px"><path d="M-98.2 158.8l43.5 43.5c1.7 1.7 4 2.7 6.5 2.7s4.8-1 6.5-2.7c1.7-1.7 2.7-4 2.7-6.5s-1-4.8-2.7-6.5l-37.2-37.2 37.2-37.2c1.7-1.7 2.7-4 2.7-6.5s-1-4.8-2.6-6.5c-1.8-1.9-4.2-2.8-6.6-2.8-2.3 0-4.6.9-6.5 2.6-11.5 11.4-41.2 41-43.3 43l-.2.2c-3.6 3.6-3.6 10.3 0 13.9z"></path></svg>
+                        <h4 id='skillset-title'>{currentSkillTitle}</h4>
+                        <svg onClick={nextSkill} className="next-skill" viewBox="-100.9 99.1 61.9 105.9" fill="#FFD166" width="12px" margin-left="4px"><path d="M-41.7 145.3l-43.5-43.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8 1-6.5 2.7c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.7 6.5L-61 152l-37.2 37.2c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.6 6.5c1.8 1.9 4.2 2.8 6.6 2.8 2.3 0 4.6-.9 6.5-2.6 11.5-11.4 41.2-41 43.3-43l.2-.2c3.6-3.6 3.6-10.4 0-13.9z"></path></svg>
                     </SkillGuide>
 
-                    <Programming />
+                    {currentSkill}
                 </SkillsContainer>
             </StructureData>
         </Layout>
     )
+}
+
+Programming.proptypes = {
+    color: PropTypes.object,
+}
+
+Design.proptypes = {
+    color: PropTypes.object,
+}
+
+Languages.proptypes = {
+    color: PropTypes.object,
 }
 
 export default About

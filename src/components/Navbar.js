@@ -1,8 +1,8 @@
 import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
-import Logo from '../images/logo/joeltorres-logo.svg'
-import { Link } from 'gatsby';
+import Logo from '../images/logo/joeltorres-logo.svg';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 // Markup
 
@@ -68,6 +68,7 @@ const StyledNavbar = styled.nav`
 const Navbar = () => {
 
   // Scroll Down
+  // const isBrowser = typeof window !== "undefined"
 
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
@@ -88,11 +89,11 @@ const Navbar = () => {
 
   return (
       <StyledNavbar id='navbar' className='hide-shadow'>
-        <Link href='#about' className='link'>about</Link>
-        <Link href='#projects' className='yellow link'>projects</Link>
+        <a onClick={() => scrollTo('#about')} className='link'>about</a>
+        <a onClick={() => scrollTo('#projects')} className='yellow link'>projects</a>
         <img src={Logo} />
-        <Link href='#illustrations' className='blue link'>illustrations</Link>
-        <Link href='#lets-talk' className='green link'>let's talk</Link>
+        <a onClick={() => scrollTo('#illustrations')} className='blue link'>illustrations</a>
+        <a onClick={() => scrollTo('#lets-talk')} className='green link'>let's talk</a>
       </StyledNavbar>
   )
 }

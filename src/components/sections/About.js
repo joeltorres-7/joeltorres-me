@@ -95,9 +95,8 @@ const About = () => {
     // OnClick functions
 
     const countSkill = React.useRef(0);
-    const skillArray = [<Programming color={skillColor} />, <Design color={skillColor} />, <Languages color={skillColor} />];
-    
-    const [currentSkill, setCurrentSkill] = React.useState(<Programming color={skillColor} />);
+    const [currentSkill, setCurrentSkill] = React.useState(<Programming color={skillColorArray[countSkill.current]} />);
+    const skillArray = [<Programming color={skillColorArray[countSkill.current]} />, <Design color={skillColorArray[countSkill.current]} />, <Languages color={skillColorArray[countSkill.current]} />];
 
     const previousSkill = () => {
         countSkill.current  = countSkill.current != 0 ? countSkill.current - 1 : 2;
@@ -111,15 +110,11 @@ const About = () => {
         setCurrentSkill(skillArray[countSkill.current]);
         setCurrentSkillTitle(skillTitleArray[countSkill.current]);
         setSkillColor(skillColorArray[countSkill.current]);
+
+        console.log("Current count: " + countSkill.current);
+        console.log("Current color: " + skillColorArray[countSkill.current]);
+        console.log("Current Skill: " + setCurrentSkill);
     }
-
-    React.useEffect(() => {
-        console.log(skillColor)
-        if (countSkill == 1 && skillColor == "#FFD166") {
-            skillColor = "#EF476F";
-        }
-
-    }, [skillColor]);
 
     const SkillGuide = styled.div`
     display: flex;

@@ -31,14 +31,30 @@ const StyledSocialNav = styled.ul`
 
         &:hover {
             color: #EF476F;
+            animation: playful-rotation .3s linear 1;
         }
         
         &.converted:hover {
             svg {
-                transition-duration: .3s;
+                transition-duration: .8s;
                 fill: #EF476F;
             }
         }
+    }
+
+    @keyframes playful-rotation {
+        0% {
+		    transform: rotate(0deg);
+	    }
+	    35% {
+		    transform: rotate(-8deg);
+	    }
+	    75% {
+		    transform: rotate(8deg);
+	    }
+	    100% {
+		    transform: rotate(0deg);
+	    }
     }
 `
 

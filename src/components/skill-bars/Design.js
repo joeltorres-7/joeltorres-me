@@ -14,6 +14,12 @@ const SkillDetails = styled.div`
 `
 
 const Design = ({ color }) => {
+
+    React.useEffect(() => {
+        console.log("Update")
+        console.log("Current Design: " + color)
+    }, [color])
+
     return (
         <SkillDetails>
             <SkillItem color={color}>

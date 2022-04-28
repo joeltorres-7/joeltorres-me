@@ -17,6 +17,15 @@ const SectionWelcome = styled.section`
     h1 {
         display: inline-flex;
         margin: .1rem;
+        width: fit-content;
+        white-space: nowrap;
+    }
+
+    #carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: .5rem;
     }
 
     // Set Scrollbar for Firefox
@@ -55,19 +64,73 @@ const SpanBox = styled.span`
     border-radius: 12px;
     padding: .3rem .6rem;
     margin: 0 .8rem;
+    height: 3.125rem;
+    line-height: 4rem;
+    position: relative;
+    overflow: hidden; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    transition-duration: 0.3s;
+    font-size: 2em;
+    min-width: 22vw;
+    font-weight: 600;
+
+    #rolltext {
+      position: absolute;
+      top: 0;
+      animation: slide 5s infinite;  
+    }
+
+    @keyframes slide {
+        0%{
+            top:0;
+        }
+        25%{
+            top: -4rem;    
+        }
+        50%{
+            top: -8rem;
+        }
+        72.5%{
+            top: -12.25rem;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(1.02);
+        margin: 0.5rem 1rem;
+        padding-left: 1rem;
+    }
 `
 
 const Welcome = () => {
     return (
         <Layout>
-            <BackDots/>
+            <BackDots />
             <SectionWelcome>
-                <h2>
-                    Ahoy! My name is
-                </h2>
+                <h2>Ahoy! My name is</h2>
                 <h1>Joel Torres</h1>
-                <h1>I'm a <SpanBox>web developer</SpanBox></h1>
-                <ScrollMessage/>
+                <div id='carousel'>
+                    <h1 id='i-am-text'>I'm a</h1>
+                    <SpanBox>
+                        <span id="rolltext">Web Developer
+                            <br />
+                            UI/UX Designer
+                            <br />
+                            Mobile Developer
+                            <br />
+                            <span id="spare-time">Polyglot</span><br />
+                        </span>
+                    </SpanBox>
+                </div>
+                <ScrollMessage />
             </SectionWelcome>
         </Layout>
     )

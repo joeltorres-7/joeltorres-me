@@ -14,7 +14,7 @@ const SectionAbout = styled.section`
     justify-content: center;
     padding: 0;
     min-height: 100vh;
-    margin-top: 2rem;
+    margin: 0;
 
     h2 {
         display: inline-flex;

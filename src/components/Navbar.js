@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
 import Logo from '../images/logo/joeltorres-logo.svg';
-import scrollTo from 'gatsby-plugin-smoothscroll';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 // Markup
 
@@ -89,11 +89,29 @@ const Navbar = () => {
 
   return (
       <StyledNavbar id='navbar' className='hide-shadow'>
-        <a onClick={() => scrollTo('#about')} className='link'>about</a>
-        <a onClick={() => scrollTo('#projects')} className='yellow link'>projects</a>
+        <Link to="about"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={600}  className='link'>about</Link>
+        <Link to="projects"
+        spy={true}
+        smooth={true}
+        offset={-60}
+        duration={700}  className='yellow link'>projects</Link>
         <img src={Logo} />
-        <a onClick={() => scrollTo('#illustrations')} className='blue link'>illustrations</a>
-        <a onClick={() => scrollTo('#lets-talk')} className='green link'>let's talk</a>
+        <Link to="illustrations"
+        spy={true}
+        smooth={true}
+        offset={-60}
+        duration={700}  className='blue link'>illustrations</Link>
+        <Link 
+        to="lets-talk" 
+        spy={true}
+        smooth={true}
+        offset={20}
+        duration={800} 
+        className='green link'>let's talk</Link>
       </StyledNavbar>
   )
 }

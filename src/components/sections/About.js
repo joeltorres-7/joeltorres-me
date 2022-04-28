@@ -155,7 +155,7 @@ const About = () => {
 
     return (
         <Layout>
-            <SectionAbout>
+            <SectionAbout id="about">
                 <h2>Who am I?</h2>
                 <p>I'm Joel, a 19-year-old guy who enjoys creating things for the world.<br /><br />I consider myself as a constant learner, this is the reason why I have knowledge and +3 years of experience in Web & Mobile Development, UI/UX Design and Language Teaching.</p>
                 <img src={selfPortrait} />

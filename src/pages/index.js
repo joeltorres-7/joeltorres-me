@@ -17,10 +17,10 @@ const IndexPage = () => {
       <Navbar />
       <SocialNav />
       <Welcome />
-      <About id="about" />
-      <Projects id="projects" />
-      <Illustrations id="illustrations" />
-      <LetsTalk id="lets-talk" />
+      <About />
+      <Projects />
+      <Illustrations />
+      <LetsTalk />
       <Footer />
     </Layout>
   )

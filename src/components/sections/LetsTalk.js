@@ -62,7 +62,7 @@ const LetsTalkSection = styled.div`
 const LetsTalk = () => {
     return (
         <Layout>
-            <LetsTalkSection>
+            <LetsTalkSection id="lets-talk">
                 <h2>Let's change the world<br/>together!</h2>
                 <p>I'm always open to new ideas, opportunities, and interactions. Anyway, I think anyone can change and improve the world :)</p>
                 <img className='medium' src={ Art.happy } alt='' />

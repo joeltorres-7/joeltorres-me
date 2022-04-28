@@ -226,7 +226,7 @@ const Description = styled.div`
 const Projects = () => {
     return (
         <Layout>
-            <SectionProjects>
+            <SectionProjects id="projects" >
                 <h2>Projects</h2>
                 <p>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
 

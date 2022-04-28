@@ -36,6 +36,12 @@ const SectionAbout = styled.section`
         border: 1px #FFD166 solid;
         border-radius: 100%;
         padding: 1rem;
+        transition-duration: 0.3s;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
     }
 
     @keyframes portraitBorder {

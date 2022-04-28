@@ -17,8 +17,12 @@ const StyledNavbar = styled.nav`
     // Hide Navbar: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 
     &#navbar {
-      background: #fff;
+      background-color: rgba(255, 255, 255, .8);  
+      backdrop-filter: blur(1rem);
+      -webkit-backdrop-filter: blur(1rem);
       box-shadow: 0px 10px 5px rgb(239, 71, 111, 0.1);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
       position: fixed;
       top: 0;
       width: 100%;

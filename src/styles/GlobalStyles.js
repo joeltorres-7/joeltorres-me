@@ -34,6 +34,48 @@ const GlobalStyles = createGlobalStyle`
     p {
         font-size: .9rem;
     }
+
+    // Queries
+
+    @media only screen and (max-width: 1300px) {
+
+        // Welcome Page
+
+        #rolling-box {
+            min-width: 30vw;
+        }
+
+    }
+
+    @media only screen and (max-width: 1000px) {
+
+        // Welcome Page
+
+        #rolling-box {
+            min-width: 35vw;
+        }
+
+    }
+
+    @media only screen and (max-width: 810px) {
+
+        // Welcome Page
+
+        #rolling-box {
+            min-width: 45vw;
+        }
+
+    }
+
+    @media only screen and (max-width: 650px) {
+
+        // Welcome Page
+
+        #rolling-box {
+            min-width: 45vw;
+        }
+
+    }
 `;
 
 export default GlobalStyles;

@@ -119,7 +119,7 @@ const Welcome = () => {
                 <h1>Joel Torres</h1>
                 <div id='carousel'>
                     <h1 id='i-am-text'>I'm a</h1>
-                    <SpanBox>
+                    <SpanBox id='rolling-box'>
                         <span id="rolltext">Web Developer
                             <br />
                             UI/UX Designer

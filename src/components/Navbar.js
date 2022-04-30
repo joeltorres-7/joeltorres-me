@@ -34,6 +34,11 @@ const StyledNavbar = styled.nav`
       box-shadow: 0px 10px 5px rgb(239, 71, 111, 0.0);
     }
 
+    &#navbar.hide-shadow {
+      transition: top 0.3s;
+      box-shadow: 0px 10px 5px rgb(239, 71, 111, 0.0);
+    }
+
     .link {
         text-decoration: none;
         color: currentColor;
@@ -67,12 +72,99 @@ const StyledNavbar = styled.nav`
         width: 38px;
         height: 38px;
     }
+
+  // Hamburger Menu
+
+    .menu-icon {
+      position: relative;
+      width: 100px;
+      height: 80px;
+      cursor: pointer;
+      display: none;
+
+    .menu-icon__cheeckbox {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+      z-index: 2;
+      -webkit-touch-callout: none;
+      position: absolute;
+      opacity: 0;
+    }
+
+    div {
+      margin: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 26px;
+      height: 12px;
+    }
+
+    span {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #118AB2;
+      border-radius: 3px;
+      transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+
+      &:first-of-type {
+        top: 0;
+      }
+      &:last-of-type {
+        bottom: 0;
+      }
+    }
+    &.active,
+    .menu-icon__cheeckbox:checked + div {
+      span {
+        &:first-of-type {
+          transform: rotate(45deg);
+          top: 5px;
+          background-color: #EF476F;
+        }
+        &:last-of-type {
+          transform: rotate(-45deg);
+          bottom: 5px;
+          background-color: #EF476F;
+        }
+      }
+    }
+
+    &.active:hover span:first-of-type,
+    &.active:hover span:last-of-type,
+    &:hover .menu-icon__cheeckbox:checked + div span:first-of-type,
+    &:hover .menu-icon__cheeckbox:checked + div span:last-of-type {
+      width: 22px;
+    }
+
+    &:hover {
+      // no need hover effect on mobile.
+      @media (min-width: 1024px) {
+        span:first-of-type {
+          width: 26px;
+        }
+
+        span:last-of-type {
+          width: 12px;
+        }
+      }
+    }
+  }
 `;
 
 const Navbar = () => {
 
   // Scroll Down
   // const isBrowser = typeof window !== "undefined"
+
+  let mobileMenuActive = true;
 
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
@@ -89,35 +181,65 @@ const Navbar = () => {
     prevScrollpos = currentScrollPos;
   }
 
+  // Open Menu
+
+  const openMenu = () => {
+    mobileMenuActive = mobileMenuActive !== true;
+    document.getElementById("mobile-menu").classList.toggle('show-menu');
+    document.getElementById("navbar").classList.toggle('hide-shadow');
+    window.onscroll = mobileMenuActive ? function () {
+      var currentScrollPos = window.pageYOffset;
+      if (currentScrollPos <= 5) {
+        document.getElementById("navbar").classList.add('hide-shadow');
+      } else if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").classList.remove('hide-shadow');
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").classList.remove('hide-shadow');
+        document.getElementById("navbar").style.top = "-80px";
+      }
+      prevScrollpos = currentScrollPos;
+    } : false;
+  }
+
   // Return View
 
   return (
-      <StyledNavbar id='navbar' className='hide-shadow'>
-        <Link to="about"
+    <StyledNavbar id='navbar' className='hide-shadow'>
+      <Link to="about"
         spy={true}
         smooth={true}
         offset={0}
-        duration={600}  className='link'>about</Link>
-        <Link to="projects"
+        duration={600} className='link'>about</Link>
+      <Link to="projects"
         spy={true}
         smooth={true}
         offset={-60}
-        duration={700}  className='yellow link'>projects</Link>
-        <img src={Logo} />
-        <Link to="illustrations"
+        duration={700} className='yellow link'>projects</Link>
+      <img id="nav-logo" src={Logo} />
+      <Link to="illustrations"
         spy={true}
         smooth={true}
         offset={-60}
-        duration={700}  className='blue link'>illustrations</Link>
-        <Link 
-        to="lets-talk" 
+        duration={700} className='blue link'>illustrations</Link>
+      <Link
+        to="lets-talk"
         spy={true}
         smooth={true}
         offset={20}
-        duration={800} 
+        duration={800}
         className='green link'>let's talk</Link>
-      </StyledNavbar>
+
+      <div class="menu-icon" onClick={openMenu}>
+        <input id="menu-icon-checkbox" class="menu-icon__cheeckbox" type="checkbox" />
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+    </StyledNavbar>
   )
 }
 
-export default Navbar;
+export default Navbar

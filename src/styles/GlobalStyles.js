@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: .9rem;
     }
 
-    // Queries
+    // Queries: Width
 
     @media only screen and (max-width: 1300px) {
 
@@ -75,7 +75,39 @@ const GlobalStyles = createGlobalStyle`
             min-width: 45vw;
         }
 
+        #gatsby-focus-wrapper {
+            overflow: hidden;
+        }
+
+        #navbar {
+            justify-content: space-between;
+
+            .link {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+
+            #nav-logo {
+                justify-self: flex-start;
+            }
+        }
+
     }
+
+    // Queries: Height
+
+    @media only screen and (max-height: 430px) {
+
+        // Welcome Page
+
+        #social-nav, #scroll-message {
+            display: none;
+        }
+
+    }
+}
 `;
 
 export default GlobalStyles;

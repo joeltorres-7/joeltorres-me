@@ -8,12 +8,14 @@ import Projects from "../components/sections/Projects";
 import Illustrations from "../components/sections/Illustrations";
 import LetsTalk from "../components/sections/LetsTalk";
 import Footer from "../components/Footer";
+import MobileMenu from "../components/MobileMenu";
 
 // markup
 
 const IndexPage = () => {
   return (
     <Layout>
+      <MobileMenu />
       <Navbar />
       <SocialNav />
       <Welcome />

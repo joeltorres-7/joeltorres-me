@@ -83,7 +83,7 @@ const DotDefault = styled.div`
 
 const BackDots = () => {
     return (
-        <DotDefault>
+        <DotDefault id='dot-box'>
             <div className='pink-dot' />
             <div className='blue-dot' />
             <div className='yellow-dot' />

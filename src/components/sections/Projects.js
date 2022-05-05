@@ -126,8 +126,10 @@ const Description = styled.div`
     }
 
     p {
+        background-color: rgba(255, 255, 255, .8);  
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
         box-shadow: 3px 5px 8px rgba(0,0,0,0.05);
-        background: #fff;
         font-size: 0.9rem;
         color: #EF476F;
         padding: 1.8rem;
@@ -228,41 +230,41 @@ const Projects = () => {
         <Layout>
             <SectionProjects id="projects" >
                 <h2>Projects</h2>
-                <p>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
+                <p className='section-title'>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
 
-                <FeaturedProject>
-                    <Device>
+                <FeaturedProject id='featured-gengo'>
+                    <Device className='devices'>
                         <div className='notch'></div>
                         <video loop muted autoplay="autoplay" width="200" className='preview' disablePictureInPicture controlsList="nodownload">
                             <source src={GengoPreview}  type="video/mp4"/>
                         </video>
                     </Device>
-                    <Description>
+                    <Description className='project-description'>
                         <img src={GengoLogo}/>
-                        <p>Learning a language is hard. But, it doesn't have to be that way.<br/><br/>Gengo is a project to show anyone in the world, no matter their background or age, can learn any language and reach fluency in 4 months.</p>
+                        <p className='project-text'>Learning a language is hard. But, it doesn't have to be that way.<br/><br/>Gengo is a project to show anyone in the world, no matter their background or age, can learn any language and reach fluency in 4 months.</p>
                         <div className='tags'>
                             <span>Android</span>
                             <span>Java</span>
                             <span>UI/UX</span>
                             <span>Project Management</span>
                         </div>
-                        <a target="_blank">More about Gengo</a>
+                        <a className="project-button" target="_blank">More about Gengo</a>
                     </Description>
                 </FeaturedProject>
 
-                <FeaturedProject>
-                    <Description className='right'>
+                <FeaturedProject id='featured-sena'>
+                    <Description className='right project-description'>
                         <img src={SenaLogo}/>
-                        <p>As an opportunity to improve the design, responsibility and accessibility from SENA Territorium, a Colombian web platform used for educational purposes, I gave my first steps in Web Design & Development through this project.</p>
+                        <p className='project-text'>As an opportunity to improve the design, responsibility and accessibility from SENA Territorium, a Colombian web platform used for educational purposes, I gave my first steps in Web Design & Development through this project.</p>
                         <div className='tags'>
                             <span>HTML5</span>
                             <span>SCSS</span>
                             <span>JavaScript</span>
                             <span>Responsive Design</span>
                         </div>
-                        <a href='https://www.behance.net/gallery/130902295/SENA-Territorium-Minimal-Redesign' target="_blank">See on Behance</a>
+                        <a className="project-button" href='https://www.behance.net/gallery/130902295/SENA-Territorium-Minimal-Redesign' target="_blank">See on Behance</a>
                     </Description>
-                    <Device>
+                    <Device className='devices'>
                         <div className='notch'></div>
                         <video loop muted width="200" autoplay="autoplay" className='preview' poster={SenaPoster} controlsList="nodownload">
                             <source src={SenaPreview}  type="video/mp4"/>

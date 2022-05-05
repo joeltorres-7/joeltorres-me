@@ -55,9 +55,9 @@ const Vectors = styled.div`
 
 const Vector = () => {
     return (
-        <Vectors>
+        <Vectors className='illustration-container'>
             <p>So far, I have made a lot of vector illustrations for my mobile app, <b>Gengo!</b><br /><br />Here are some of them:</p>
-            <div className='grid-view'>
+            <div className='grid-view-vectors'>
                 <img src={Art.badges} alt='' />
                 <img src={Art.worldwide} alt='' />
                 <img src={Art.heart} alt='' />

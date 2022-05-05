@@ -42,9 +42,9 @@ const IllustrationStyles = styled.div`
 
 const Vector = () => {
     return (
-        <IllustrationStyles>
+        <IllustrationStyles className='illustration-container'>
             <p>I see illustrating as a way of expressing feelings and ideas through colors, landscapes and characters<br /><br />Here are some of my favorite works:</p>
-            <div className='grid-view'>
+            <div className='grid-view-illustrations'>
                 <img src={Art.beesClouds} alt='' />
                 <img src={Art.rainyBus} alt='' />
                 <img src={Art.shiningGirl} alt='' />

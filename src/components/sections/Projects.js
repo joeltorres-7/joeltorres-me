@@ -255,7 +255,7 @@ const Projects = () => {
                 <FeaturedProject id='featured-sena'>
                     <Description className='right project-description'>
                         <img src={SenaLogo}/>
-                        <p className='project-text'>As an opportunity to improve the design, responsibility and accessibility from SENA Territorium, a Colombian web platform used for educational purposes, I gave my first steps in Web Design & Development through this project.</p>
+                        <p className='project-text'>As an opportunity to improve the design, responsiveness and accessibility from SENA Territorium, a Colombian web platform used for educational purposes, I gave my first steps in Web Design & Development through this project.</p>
                         <div className='tags'>
                             <span>HTML5</span>
                             <span>SCSS</span>

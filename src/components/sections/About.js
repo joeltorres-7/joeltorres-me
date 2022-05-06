@@ -163,12 +163,12 @@ const About = () => {
         <Layout>
             <SectionAbout id="about">
                 <h2>Who am I?</h2>
-                <p>I'm Joel, a 19-year-old guy who enjoys creating things for the world.<br /><br />I consider myself as a constant learner, this is the reason why I have knowledge and +3 years of experience in Web & Mobile Development, UI/UX Design and Language Teaching.</p>
+                <p className='section-title'>I'm Joel, a 19-year-old guy who enjoys creating things for the world.<br /><br />I consider myself as a constant learner, this is the reason why I have knowledge and +3 years of experience in Web & Mobile Development, UI/UX Design and Language Teaching.</p>
                 <img src={selfPortrait} />
             </SectionAbout>
             <StructureData>
-                <h3>Do you like structured data?</h3>
-                <p>Here are some of my skills and technologies I've worked with so far:</p>
+                <h3 className='section-subtitle'>Do you like structured data?</h3>
+                <p className='section-title'>Here are some of my skills and technologies I've worked with so far:</p>
 
                 <SkillsContainer>
                     <SkillGuide className='skill-styles'>

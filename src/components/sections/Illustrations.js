@@ -97,7 +97,7 @@ const Illustrations = () => {
         <Layout>
             <SectionIllustrations id="illustrations">
                 <h2>Illustrations</h2>
-                <p>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
+                <p className='section-title'>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
 
                 <IllustratorContainer>
                     <IllustratorGuide>

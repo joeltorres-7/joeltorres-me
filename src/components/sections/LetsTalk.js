@@ -64,7 +64,7 @@ const LetsTalk = () => {
         <Layout>
             <LetsTalkSection id="lets-talk">
                 <h2>Let's change the world<br/>together!</h2>
-                <p>I'm always open to new ideas, opportunities, and interactions. Anyway, I think anyone can change and improve the world :)</p>
+                <p className='section-title'>I'm always open to new ideas, opportunities, and interactions. Anyway, I think anyone can change and improve the world :)</p>
                 <img className='medium' src={ Art.happy } alt='' />
                 <p>See you soon!</p>
                 <a href='mailto:thisisjoeltorres@gmail.com'>Say Hello!</a>

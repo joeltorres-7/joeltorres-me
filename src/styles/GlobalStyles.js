@@ -173,8 +173,8 @@ const GlobalStyles = createGlobalStyle`
             margin: 0rem auto;
         }
 
-        .section-title {
-            min-width: 60vw;
+        p.section-title {
+            max-width: 60vw !important;
         }
 
         /* Grid View for Illustrations */
@@ -183,6 +183,7 @@ const GlobalStyles = createGlobalStyle`
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin: auto;
             max-width: 50vw;
 
             &:img {
@@ -260,6 +261,12 @@ const GlobalStyles = createGlobalStyle`
                 display: none;
             }
         }
+
+        .section-subtitle {
+            line-break: auto;
+            max-width: 60vw;
+            text-align: center;
+        }
     }
 
     @media only screen and (max-width: 550px) {
@@ -272,11 +279,19 @@ const GlobalStyles = createGlobalStyle`
         #rolling-box {
             min-width: 65vw;
         }
+
+        p .section-title {
+            min-width: 60vw;
+        }
     }
 
     @media only screen and (max-width: 380px) {
         #rolling-box {
             min-width: 76vw;
+        }
+
+        .section-title {
+            min-width: 40vw;
         }
     }
 

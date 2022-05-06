@@ -9,12 +9,25 @@ import Illustrations from "../components/sections/Illustrations";
 import LetsTalk from "../components/sections/LetsTalk";
 import Footer from "../components/Footer";
 import MobileMenu from "../components/MobileMenu";
+import { Helmet } from "react-helmet"
 
 // markup
 
 const IndexPage = () => {
   return (
     <Layout>
+
+      {/* Page Title */}
+
+      <Helmet>
+          <meta charSet="utf-8" />
+          <meta name="description" content="Joel Torres is Web & Mobile Developer, UI/UX Designer and Polyglot who uses the power of technology to improve education and services."></meta>
+          <title>Joel Torres</title>
+          <link rel="canonical" href="http://joeltorres.me/" />
+      </Helmet>
+
+      {/* Sections */}
+
       <MobileMenu />
       <Navbar />
       <SocialNav />

@@ -216,7 +216,7 @@ const Navbar = () => {
         smooth={true}
         offset={-60}
         duration={700} className='yellow link'>projects</Link>
-      <img id="nav-logo" src={Logo} />
+      <img id="nav-logo" src={Logo} alt='Personal logo that looks like PI symbol.' />
       <Link to="illustrations"
         spy={true}
         smooth={true}

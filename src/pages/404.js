@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import SocialNav from '../components/SocialNav';
 import styled from 'styled-components';
 import BackDots from "../components/BackDots";
+import { Helmet } from "react-helmet"
 
 const NotFoundLayout = styled.div`
   display: flex;
@@ -39,9 +40,20 @@ const NotFoundLayout = styled.div`
 const NotFoundPage = () => {
   return (
     <Layout>
+
+      {/* Page Title */}
+
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>404 - Not Found</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+
+      {/* Sections */}
+
       <Navbar />
       <SocialNav />
-      <BackDots/>
+      <BackDots />
       <NotFoundLayout>
         <h2>404</h2>
         <h3>The page you're looking for doesn't exist or has been moved.</h3>

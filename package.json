@@ -19,6 +19,7 @@
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.12.1",
     "gatsby-plugin-image": "^2.12.1",
+    "gatsby-plugin-react-helmet": "^5.13.0",
     "gatsby-plugin-sharp": "^4.12.1",
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-plugin-styled-components": "^5.12.1",
@@ -27,6 +28,7 @@
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
     "react-scroll": "^1.8.7",
     "styled-components": "^5.3.5",
     "styled-normalize": "^8.0.7"

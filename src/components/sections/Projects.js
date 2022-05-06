@@ -240,7 +240,7 @@ const Projects = () => {
                         </video>
                     </Device>
                     <Description className='project-description'>
-                        <img src={GengoLogo}/>
+                        <img src={GengoLogo} alt='Logo for Gengo Project.' />
                         <p className='project-text'>Learning a language is hard. But, it doesn't have to be that way.<br/><br/>Gengo is a project to show anyone in the world, no matter their background or age, can learn any language and reach fluency in 4 months.</p>
                         <div className='tags'>
                             <span>Android</span>
@@ -254,7 +254,7 @@ const Projects = () => {
 
                 <FeaturedProject id='featured-sena'>
                     <Description className='right project-description'>
-                        <img src={SenaLogo}/>
+                        <img src={SenaLogo} alt='Logo for Sena Responsive Redesign project.' />
                         <p className='project-text'>As an opportunity to improve the design, responsiveness and accessibility from SENA Territorium, a Colombian web platform used for educational purposes, I gave my first steps in Web Design & Development through this project.</p>
                         <div className='tags'>
                             <span>HTML5</span>

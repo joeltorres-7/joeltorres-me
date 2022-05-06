@@ -65,7 +65,7 @@ const LetsTalk = () => {
             <LetsTalkSection id="lets-talk">
                 <h2>Let's change the world<br/>together!</h2>
                 <p className='section-title'>I'm always open to new ideas, opportunities, and interactions. Anyway, I think anyone can change and improve the world :)</p>
-                <img className='medium' src={ Art.happy } alt='' />
+                <img className='medium' src={ Art.happy } alt='An image of happy cat.' />
                 <p>See you soon!</p>
                 <a href='mailto:thisisjoeltorres@gmail.com'>Say Hello!</a>
             </LetsTalkSection>

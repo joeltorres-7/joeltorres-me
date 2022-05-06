@@ -45,10 +45,10 @@ const Vector = () => {
         <IllustrationStyles className='illustration-container'>
             <p className='section-title'>I see illustrating as a way of expressing feelings and ideas through colors, landscapes and characters<br /><br />Here are some of my favorite works:</p>
             <div className='grid-view-illustrations'>
-                <img src={Art.beesClouds} alt='' />
-                <img src={Art.rainyBus} alt='' />
-                <img src={Art.shiningGirl} alt='' />
-                <img src={Art.wizard} alt='' />
+                <img src={Art.beesClouds} alt='Illustration of a girl resting on a field appreciating bees.' />
+                <img src={Art.rainyBus} alt='Illustration of a little girl petting a cat on a rainy bus stop.' />
+                <img src={Art.shiningGirl} alt='Illustration of a girl holding a star and floating in space.' />
+                <img src={Art.wizard} alt='Illustration of a wizard smiling.' />
             </div>
         </IllustrationStyles>
     )

@@ -232,6 +232,7 @@ const Navbar = () => {
 
       <div class="menu-icon" onClick={openMenu}>
         <input id="menu-icon-checkbox" class="menu-icon__cheeckbox" type="checkbox" />
+        <label for="menu-icon-checkbox"></label>
         <div>
           <span></span>
           <span></span>

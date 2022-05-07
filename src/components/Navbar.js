@@ -34,11 +34,6 @@ const StyledNavbar = styled.nav`
       box-shadow: 0px 10px 5px rgb(239, 71, 111, 0.0);
     }
 
-    &#navbar.hide-shadow {
-      transition: top 0.3s;
-      box-shadow: 0px 10px 5px rgb(239, 71, 111, 0.0);
-    }
-
     .link {
         text-decoration: none;
         color: currentColor;
@@ -67,13 +62,40 @@ const StyledNavbar = styled.nav`
         }
     }
 
-    img {
+    svg {
         padding: 1rem 2rem;
         width: 38px;
         height: 38px;
+        transition-duration: 0.3s;
+        
+        &:hover {
+          cursor: pointer;
+        }
+
+        path {
+          transition-duration: 0.4s;
+        }
     }
 
-  // Hamburger Menu
+    // Logo Styles
+
+    .red-fill {
+      fill: #EF476F;
+    }
+
+    .yellow-fill {
+      fill: #FFD166;
+    }
+
+    .blue-fill {
+      fill: #118AB2;
+    }
+
+    .green-fill {
+      fill: #06D6A0;
+    }
+
+    // Hamburger Menu
 
     .menu-icon {
       position: relative;
@@ -145,7 +167,9 @@ const StyledNavbar = styled.nav`
     }
 
     &:hover {
-      // no need hover effect on mobile.
+      
+      // No need hover effect on mobile.
+
       @media (min-width: 1024px) {
         span:first-of-type {
           width: 26px;
@@ -202,28 +226,56 @@ const Navbar = () => {
     } : false;
   }
 
+  // Change logo color if hover
+
+  const aboutHover = () => {
+    document.getElementById("logo-letter").classList.toggle('red-fill');
+  }
+
+  const projectsHover = () => {
+    document.getElementById("logo-letter").classList.toggle('yellow-fill');
+  }
+
+  const illustrationsHover = () => {
+    document.getElementById("logo-letter").classList.toggle('blue-fill');
+  }
+
+  const talkHover = () => {
+    document.getElementById("logo-letter").classList.toggle('green-fill');
+  }
+
   // Return View
 
   return (
     <StyledNavbar id='navbar' className='hide-shadow'>
       <Link to="about"
+        onMouseOver={aboutHover}
+        onMouseLeave={aboutHover}
         spy={true}
         smooth={true}
         offset={0}
         duration={600} className='link'>about</Link>
       <Link to="projects"
+        onMouseOver={projectsHover}
+        onMouseLeave={projectsHover}
         spy={true}
         smooth={true}
         offset={-60}
         duration={700} className='yellow link'>projects</Link>
-      <img id="nav-logo" src={Logo} alt='Personal logo that looks like PI symbol.' />
+
+      <svg alt='Personal logo that looks like PI symbol.' id="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 37.998" width="38" height="37.998"><path d="M0 0v37.998h38V0Zm34.368 13.191h-6.126V28.738H22.575V13.191h-4.343v8.157q0 3.922 -1.975 5.854t-5.754 1.931q-2.203 0 -3.993 -0.758a7.608 7.608 0 0 1 -2.964 -2.189l3.091 -3.665q0.802 1.031 1.661 1.56a3.38 3.38 0 0 0 1.802 0.532q2.518 0 2.52 -2.92v-8.614H5.692v-4.381h28.676Z" fill="none" /><path id='logo-letter' d="M34.368 8.697v4.494h-6.126V28.738H22.575V13.191h-4.343v8.157q0 3.922 -1.975 5.854t-5.754 1.931q-2.203 0 -3.993 -0.758a7.608 7.608 0 0 1 -2.964 -2.189l3.091 -3.665q0.802 1.031 1.661 1.56a3.38 3.38 0 0 0 1.802 0.532q2.518 0 2.52 -2.92v-8.614H5.692v-4.381Z" fill="#073b4c" /></svg>
+
       <Link to="illustrations"
+        onMouseOver={illustrationsHover}
+        onMouseLeave={illustrationsHover}
         spy={true}
         smooth={true}
         offset={-60}
         duration={700} className='blue link'>illustrations</Link>
       <Link
         to="lets-talk"
+        onMouseOver={talkHover}
+        onMouseLeave={talkHover}
         spy={true}
         smooth={true}
         offset={20}

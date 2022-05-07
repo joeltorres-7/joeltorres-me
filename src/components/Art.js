@@ -2,10 +2,10 @@ const Art = {
 
     // Illustrations
 
-    shiningGirl: require('../images/illustrations/shining-girl.png').default,
-    rainyBus: require('../images/illustrations/rainy-bus-stop.png').default,
+    shiningGirl: require('../images/illustrations/shining-girl.webp').default,
+    rainyBus: require('../images/illustrations/rainy-bus-stop.webp').default,
     beesClouds: require('../images/illustrations/bees-and-clouds.webp').default,
-    wizard: require('../images/illustrations/wizard.png').default,
+    wizard: require('../images/illustrations/wizard.webp').default,
 
     // Vectors
 

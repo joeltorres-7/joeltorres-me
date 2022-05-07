@@ -2,10 +2,10 @@ import * as React from 'react'
 import Layout from '../Layout';
 import styled from 'styled-components';
 import GengoPreview from '../../images/previews/gengo-workflow.mp4';
-import GengoLogo from '../../images/elements/gengo-logo.png';
+import GengoLogo from '../../images/elements/gengo-logo.webp';
 import SenaPreview from '../../images/previews/sena-workflow.mp4';
 import SenaLogo from '../../images/elements/sena-responsive-logo.svg';
-import SenaPoster from '../../images/elements/sena-responsive-poster.png';
+import SenaPoster from '../../images/elements/sena-responsive-poster.webp';
 
 // Styles
 
@@ -240,7 +240,7 @@ const Projects = () => {
                         </video>
                     </Device>
                     <Description className='project-description'>
-                        <img src={GengoLogo} alt='Logo for Gengo Project.' />
+                        <img loading='lazy' src={GengoLogo} alt='Logo for Gengo Project.' />
                         <p className='project-text'>Learning a language is hard. But, it doesn't have to be that way.<br/><br/>Gengo is a project to show anyone in the world, no matter their background or age, can learn any language and reach fluency in 4 months.</p>
                         <div className='tags'>
                             <span>Android</span>
@@ -254,7 +254,7 @@ const Projects = () => {
 
                 <FeaturedProject id='featured-sena'>
                     <Description className='right project-description'>
-                        <img src={SenaLogo} alt='Logo for Sena Responsive Redesign project.' />
+                        <img loading='lazy' src={SenaLogo} alt='Logo for Sena Responsive Redesign project.' />
                         <p className='project-text'>As an opportunity to improve the design, responsiveness and accessibility from SENA Territorium, a Colombian web platform used for educational purposes, I gave my first steps in Web Design & Development through this project.</p>
                         <div className='tags'>
                             <span>HTML5</span>

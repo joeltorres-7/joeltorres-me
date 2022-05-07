@@ -17,7 +17,7 @@ const IndexPage = () => {
   return (
     <Layout>
 
-      {/* Page Title */}
+      {/* Meta Data */}
 
       <Helmet htmlAttributes={{
         lang: 'en',

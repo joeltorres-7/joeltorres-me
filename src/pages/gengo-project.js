@@ -8,7 +8,7 @@ import BackDots from "../components/BackDots";
 import MobileMenu from "../components/MobileMenu";
 import { Helmet } from "react-helmet"
 
-const GengoLayout = styled.div`
+const NotFoundLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +72,7 @@ const NotFoundPage = () => {
 
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Gengo Project | Joel Torres</title>
+        <title>Yikes! Page Not Found | Joel Torres</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
 
@@ -82,11 +82,11 @@ const NotFoundPage = () => {
       <Navbar />
       <SocialNav />
       <BackDots />
-      <GengoLayout>
-        <h2>404</h2>
+      <NotFoundLayout>
+        <h2>Gengo</h2>
         <h3>The page you're looking for doesn't exist or has been moved.</h3>
         <Link to="/" className="project-button" target="_blank" rel="noopener noreferrer">Go Home</Link>
-      </GengoLayout>
+      </NotFoundLayout>
     </Layout>
   )
 }

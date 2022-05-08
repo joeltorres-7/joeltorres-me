@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Layout from '../Layout';
+import { Link } from "gatsby";
 import styled from 'styled-components';
 import GengoPreview from '../../images/previews/gengo-workflow.mp4';
 import GengoLogo from '../../images/elements/gengo-logo.webp';
@@ -248,7 +249,7 @@ const Projects = () => {
                             <span>UI/UX</span>
                             <span>Project Management</span>
                         </div>
-                        <a className="project-button" target="_blank" rel="noopener noreferrer">More about Gengo</a>
+                        <Link to="/gengo-project/" className="project-button" target="_blank" rel="noopener noreferrer">More about Gengo</Link>
                     </Description>
                 </FeaturedProject>
 

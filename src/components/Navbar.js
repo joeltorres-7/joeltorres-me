@@ -196,28 +196,11 @@ const Navbar = () => {
 
   let mobileMenuActive = true;
 
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
-    if (currentScrollPos <= 5) {
-      document.getElementById("navbar").classList.add('hide-shadow');
-    } else if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").classList.remove('hide-shadow');
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").classList.remove('hide-shadow');
-      document.getElementById("navbar").style.top = "-80px";
-    }
-    prevScrollpos = currentScrollPos;
-  }
+  const isBrowser = typeof window !== "undefined";
 
-  // Open Menu
-
-  const openMenu = () => {
-    mobileMenuActive = mobileMenuActive !== true;
-    document.getElementById("mobile-menu").classList.toggle('show-menu');
-    document.getElementById("navbar").classList.toggle('hide-shadow');
-    window.onscroll = mobileMenuActive ? function () {
+  if (isBrowser) {
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
       var currentScrollPos = window.pageYOffset;
       if (currentScrollPos <= 5) {
         document.getElementById("navbar").classList.add('hide-shadow');
@@ -229,7 +212,31 @@ const Navbar = () => {
         document.getElementById("navbar").style.top = "-80px";
       }
       prevScrollpos = currentScrollPos;
-    } : false;
+    }
+
+  }
+  // Open Menu
+
+  const openMenu = () => {
+    mobileMenuActive = mobileMenuActive !== true;
+    document.getElementById("mobile-menu").classList.toggle('show-menu');
+    document.getElementById("navbar").classList.toggle('hide-shadow');
+
+    if (isBrowser) {
+      window.onscroll = mobileMenuActive ? function () {
+        var currentScrollPos = window.pageYOffset;
+        if (currentScrollPos <= 5) {
+          document.getElementById("navbar").classList.add('hide-shadow');
+        } else if (prevScrollpos > currentScrollPos) {
+          document.getElementById("navbar").classList.remove('hide-shadow');
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").classList.remove('hide-shadow');
+          document.getElementById("navbar").style.top = "-80px";
+        }
+        prevScrollpos = currentScrollPos;
+      } : false;
+    }
   }
 
   // Change logo color if hover

@@ -77,6 +77,12 @@ const SpanBox = styled.span`
     font-size: 2em;
     min-width: 22vw;
     font-weight: 600;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 
     #rolltext {
       position: absolute;

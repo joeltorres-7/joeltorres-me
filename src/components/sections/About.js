@@ -1,4 +1,4 @@
-import React, { setState, setEffect } from 'react';
+import React, { setState, useCallback, setEffect } from 'react';
 import Layout from '../Layout';
 import styled from 'styled-components';
 import selfPortrait from '../../images/elements/portrait-joel.webp';
@@ -97,31 +97,36 @@ const About = () => {
 
     const [currentSkillTitle, setCurrentSkillTitle] = React.useState('Development');
     const [skillColor, setSkillColor] = React.useState('#FFD166');
+    const [countSkill, setCountSkill] = React.useState(1);
 
     // OnClick functions
 
-    const countSkill = React.useRef(0);
-    const [currentSkill, setCurrentSkill] = React.useState(<Programming color={skillColorArray[countSkill.current]} />);
-    const skillArray = [<Programming color={skillColorArray[countSkill.current]} />, <Design color={skillColorArray[countSkill.current]} />, <Languages color={skillColorArray[countSkill.current]} />];
+    const [currentSkill, setCurrentSkill] = React.useState(<Programming className="currentSlider" color={skillColorArray[0]} />);
+    const skillArray = [<Programming color={skillColorArray[countSkill]} />, <Design color={skillColorArray[countSkill]} />, <Languages color={skillColorArray[countSkill]} />];
+
+    const [, updateState] = React.useState();
+    const forceUpdate = useCallback(() => updateState({}), []);
 
     const previousSkill = () => {
-        countSkill.current  = countSkill.current != 0 ? countSkill.current - 1 : 2;
-        setCurrentSkill(skillArray[countSkill.current]);
-        setCurrentSkillTitle(skillTitleArray[countSkill.current]);
-        setSkillColor(skillColorArray[countSkill.current]);
+        setCountSkill(countSkill != 0 ? countSkill - 1 : 2);
+        setCurrentSkill(skillArray[countSkill]);
+        setCurrentSkillTitle(skillTitleArray[countSkill]);
+        setSkillColor(skillColorArray[countSkill]);
+        forceUpdate()
     }
 
     const nextSkill = () => {
-        countSkill.current  = countSkill.current < 2 ? countSkill.current + 1 : 0;
-        setCurrentSkill(skillArray[countSkill.current]);
-        setCurrentSkillTitle(skillTitleArray[countSkill.current]);
-        setSkillColor(skillColorArray[countSkill.current]);
+        setCountSkill(countSkill != 2 ? countSkill + 1 : 0);
+        setCurrentSkill(skillArray[countSkill]);
+        setCurrentSkillTitle(skillTitleArray[countSkill]);
+        setSkillColor(skillColorArray[countSkill]);
+        forceUpdate()
     }
 
     React.useEffect(() => {
-        console.log("Current count: " + countSkill.current);
-        console.log("Current color: " + skillColorArray[countSkill.current]);
-        console.log("Current Skill: " + setCurrentSkill);
+        console.log("Current count: " + countSkill);
+        console.log("Current color in About: " + skillColorArray[countSkill]);
+        console.log("Current Skill: " + skillColor);
     })
     
 
@@ -138,6 +143,15 @@ const About = () => {
         background: ${skillColor};
         padding: .7rem 1.7rem;
         border-radius: 14px;
+        transition-duration: 0.2s;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            transform: scale(1.05);
+        }
     }
 
     svg {

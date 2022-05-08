@@ -71,6 +71,15 @@ const Illustrations = () => {
         background: ${artColor};
         padding: .7rem 1.7rem;
         border-radius: 14px;
+        transition-duration: 0.2s;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            transform: scale(1.05);
+        }
     }
 
     svg {

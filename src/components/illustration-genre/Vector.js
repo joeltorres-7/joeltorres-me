@@ -59,15 +59,15 @@ const Vector = () => {
         <Vectors className='illustration-container'>
             <p className='section-title'>So far, I have made a lot of vector illustrations for my mobile app, <b>Gengo!</b><br /><br />Here are some of them:</p>
             <div className='grid-view-vectors'>
-                <img src={Art.badges} alt='A cat holding a star.' />
-                <img src={Art.worldwide} alt='A cat behind an earth globe.' />
-                <img src={Art.heart} alt='A cat holding a heart.' />
-                <img className='big' src={Art.email} alt='A cat holding a letter.' />
-                <img className='small' src={Art.workout} alt='A cat holding two dumbbells' />
-                <img className='medium' src={Art.happy} alt='A cat smiling.' />
-                <img className='medium' src={Art.knowledge} alt='A cat' />
-                <img className='really-big' src={Art.confused} alt='A cat head with two interrogation signs.' />
-                <img className='small' src={Art.languages} alt='A cat head with two languages signs.' />
+                <img loading='lazy' src={Art.badges} alt='A cat holding a star.' />
+                <img loading='lazy' src={Art.worldwide} alt='A cat behind an earth globe.' />
+                <img loading='lazy' src={Art.heart} alt='A cat holding a heart.' />
+                <img loading='lazy' className='big' src={Art.email} alt='A cat holding a letter.' />
+                <img loading='lazy' className='small' src={Art.workout} alt='A cat holding two dumbbells' />
+                <img loading='lazy' className='medium' src={Art.happy} alt='A cat smiling.' />
+                <img loading='lazy' className='medium' src={Art.knowledge} alt='A cat' />
+                <img loading='lazy' className='really-big' src={Art.confused} alt='A cat head with two interrogation signs.' />
+                <img loading='lazy' className='small' src={Art.languages} alt='A cat head with two languages signs.' />
             </div>
         </Vectors>
     )

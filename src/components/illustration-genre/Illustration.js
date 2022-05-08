@@ -45,10 +45,18 @@ const Vector = () => {
         <IllustrationStyles className='illustration-container'>
             <p className='section-title'>I see illustrating as a way of expressing feelings and ideas through colors, landscapes and characters<br /><br />Here are some of my favorite works:</p>
             <div className='grid-view-illustrations'>
-                <img loading='lazy' src={Art.beesClouds} alt='Illustration of a girl resting on a field appreciating bees.' />
-                <img loading='lazy' src={Art.rainyBus} alt='Illustration of a little girl petting a cat on a rainy bus stop.' />
-                <img loading='lazy' src={Art.shiningGirl} alt='Illustration of a girl holding a star and floating in space.' />
-                <img loading='lazy' src={Art.wizard} alt='Illustration of a wizard smiling.' />
+                <a href='https://twitter.com/JoelTorres_7/status/1427272841498611716?s=20&t=WDatJEnLZCClY11OzTldtA' target="_blank" rel="noopener noreferrer">
+                    <img loading='lazy' src={Art.beesClouds} alt='Illustration of a girl resting on a field appreciating bees.' />
+                </a>
+                <a href='https://twitter.com/JoelTorres_7/status/1429451678563151889?s=20&t=WDatJEnLZCClY11OzTldtA' target="_blank" rel="noopener noreferrer">
+                    <img loading='lazy' src={Art.rainyBus} alt='Illustration of a little girl petting a cat on a rainy bus stop.' />
+                </a>
+                <a href='https://twitter.com/JoelTorres_7/status/1431971135961407488?s=20&t=WDatJEnLZCClY11OzTldtA' target="_blank" rel="noopener noreferrer">
+                    <img loading='lazy' src={Art.shiningGirl} alt='Illustration of a girl holding a star and floating in space.' />
+                </a>
+                <a href='https://twitter.com/JoelTorres_7/status/1427994339796570112?s=20&t=WDatJEnLZCClY11OzTldtA' target="_blank" rel="noopener noreferrer">
+                    <img loading='lazy' src={Art.wizard} alt='Illustration of a wizard smiling.' />
+                </a>
             </div>
         </IllustrationStyles>
     )

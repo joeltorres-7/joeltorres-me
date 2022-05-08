@@ -44,6 +44,7 @@ const SkillItem = ({ children, color }) => {
             margin: 0.2rem 0.2rem;
             width: 10px;
             height: 10px;
+            background: #fff;
             border-radius: 100%;
             border: 0.1rem ${color} solid;
         }

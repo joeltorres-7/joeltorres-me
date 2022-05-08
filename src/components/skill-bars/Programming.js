@@ -18,7 +18,7 @@ const Programming = ({ color }) => {
     React.useEffect(() => {
         console.log("Update")
         console.log("Current Programming: " + color)
-    }, [color])
+    })
 
     return (
         <SkillDetails>

@@ -116,11 +116,14 @@ const About = () => {
         setCurrentSkill(skillArray[countSkill.current]);
         setCurrentSkillTitle(skillTitleArray[countSkill.current]);
         setSkillColor(skillColorArray[countSkill.current]);
+    }
 
+    React.useEffect(() => {
         console.log("Current count: " + countSkill.current);
         console.log("Current color: " + skillColorArray[countSkill.current]);
         console.log("Current Skill: " + setCurrentSkill);
-    }
+    })
+    
 
     const SkillGuide = styled.div`
     display: flex;

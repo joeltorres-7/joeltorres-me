@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { Normalize } from 'styled-normalize'
 
 const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
@@ -17,6 +16,10 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         color: #0B3B4B;
+    }
+
+    html, body {
+        scroll-behavior: smooth;
     }
 
     h1 {

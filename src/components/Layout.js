@@ -7,6 +7,10 @@ import { Normalize } from 'styled-normalize'
 
 const theme = {}
 
+if (typeof window !== "undefined") {
+    require("smooth-scroll")('a[href*="#"]')
+  }
+
 const Layout = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>

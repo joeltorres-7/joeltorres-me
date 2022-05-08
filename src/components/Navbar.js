@@ -1,8 +1,8 @@
 import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
-import Logo from '../images/logo/joeltorres-logo.svg';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link as SmoothLink, animateScroll as scroll } from "react-scroll";
+import { Link } from "gatsby"
 
 // Markup
 
@@ -13,8 +13,6 @@ const StyledNavbar = styled.nav`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    // Hide Navbar: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 
     &#navbar {
       background-color: rgba(255, 255, 255, .8);  
@@ -70,6 +68,10 @@ const StyledNavbar = styled.nav`
         
         &:hover {
           cursor: pointer;
+
+          & #logo-letter {
+            fill: #EF476F;
+          }
         }
 
         path {
@@ -183,6 +185,10 @@ const StyledNavbar = styled.nav`
   }
 `;
 
+if (typeof window !== "undefined") {
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 const Navbar = () => {
 
   // Scroll Down
@@ -248,14 +254,14 @@ const Navbar = () => {
 
   return (
     <StyledNavbar id='navbar' className='hide-shadow'>
-      <Link to="about"
+      <Link to="/#about"
         onMouseOver={aboutHover}
         onMouseLeave={aboutHover}
         spy={true}
         smooth={true}
         offset={0}
         duration={600} className='link'>about</Link>
-      <Link to="projects"
+      <Link to="/#projects"
         onMouseOver={projectsHover}
         onMouseLeave={projectsHover}
         spy={true}
@@ -263,9 +269,11 @@ const Navbar = () => {
         offset={-60}
         duration={700} className='yellow link'>projects</Link>
 
-      <svg alt='Personal logo that looks like PI symbol.' id="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 37.998" width="38" height="37.998"><path d="M0 0v37.998h38V0Zm34.368 13.191h-6.126V28.738H22.575V13.191h-4.343v8.157q0 3.922 -1.975 5.854t-5.754 1.931q-2.203 0 -3.993 -0.758a7.608 7.608 0 0 1 -2.964 -2.189l3.091 -3.665q0.802 1.031 1.661 1.56a3.38 3.38 0 0 0 1.802 0.532q2.518 0 2.52 -2.92v-8.614H5.692v-4.381h28.676Z" fill="none" /><path id='logo-letter' d="M34.368 8.697v4.494h-6.126V28.738H22.575V13.191h-4.343v8.157q0 3.922 -1.975 5.854t-5.754 1.931q-2.203 0 -3.993 -0.758a7.608 7.608 0 0 1 -2.964 -2.189l3.091 -3.665q0.802 1.031 1.661 1.56a3.38 3.38 0 0 0 1.802 0.532q2.518 0 2.52 -2.92v-8.614H5.692v-4.381Z" fill="#073b4c" /></svg>
+      <Link to="/" aria-label="home">
+        <svg alt='Personal logo that looks like PI symbol.' id="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 37.998" width="38" height="37.998"><path d="M0 0v37.998h38V0Zm34.368 13.191h-6.126V28.738H22.575V13.191h-4.343v8.157q0 3.922 -1.975 5.854t-5.754 1.931q-2.203 0 -3.993 -0.758a7.608 7.608 0 0 1 -2.964 -2.189l3.091 -3.665q0.802 1.031 1.661 1.56a3.38 3.38 0 0 0 1.802 0.532q2.518 0 2.52 -2.92v-8.614H5.692v-4.381h28.676Z" fill="none" /><path id='logo-letter' d="M34.368 8.697v4.494h-6.126V28.738H22.575V13.191h-4.343v8.157q0 3.922 -1.975 5.854t-5.754 1.931q-2.203 0 -3.993 -0.758a7.608 7.608 0 0 1 -2.964 -2.189l3.091 -3.665q0.802 1.031 1.661 1.56a3.38 3.38 0 0 0 1.802 0.532q2.518 0 2.52 -2.92v-8.614H5.692v-4.381Z" fill="#073b4c" /></svg>
+      </Link>
 
-      <Link to="illustrations"
+      <Link to="/#illustrations"
         onMouseOver={illustrationsHover}
         onMouseLeave={illustrationsHover}
         spy={true}
@@ -273,7 +281,7 @@ const Navbar = () => {
         offset={-60}
         duration={700} className='blue link'>illustrations</Link>
       <Link
-        to="lets-talk"
+        to="/#lets-talk"
         onMouseOver={talkHover}
         onMouseLeave={talkHover}
         spy={true}

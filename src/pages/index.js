@@ -10,6 +10,7 @@ import LetsTalk from "../components/sections/LetsTalk";
 import Footer from "../components/Footer";
 import MobileMenu from "../components/MobileMenu";
 import { Helmet } from "react-helmet"
+import Splash from "../components/Splash";
 
 // markup
 
@@ -32,6 +33,7 @@ const IndexPage = () => {
 
       {/* Sections */}
 
+      <Splash />
       <MobileMenu />
       <Navbar />
       <SocialNav />

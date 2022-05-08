@@ -3,13 +3,13 @@ module.exports = {
     title: `Joel Torres`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-react-helmet", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  plugins: ["gatsby-plugin-styled-components", 'gatsby-plugin-netlify', "gatsby-plugin-react-helmet", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", 
+  {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "images",
-      "path": "./src/images/"
+      path: `${__dirname}/src/pages`,
+      name: 'pages'
     },
-    __key: "images"
   }, {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -25,18 +25,33 @@ module.exports = {
         display: `standalone`,
       },
     }, {
-      resolve: `gatsby-plugin-purgecss`,
+      resolve: 'gatsby-plugin-purgecss',
       options: {
-        printRejected: true, // Print removed selectors and processed file names
-        // develop: true, // Enable while using `gatsby develop`
-        // tailwind: true, // Enable tailwindcss support
-        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+        printRejected: true,
         purgeCSSOptions: {
           // https://purgecss.com/configuration.html#options
           // safelist: ['safelist'], // Don't remove this selector
         },
         // More options defined here https://purgecss.com/configuration.html#options
       },
-    }, 'gatsby-plugin-offline', `gatsby-plugin-minify`]
+    }, 'gatsby-plugin-offline', {
+      resolve: 'gatsby-plugin-minify',
+      options: {
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        processConditionalComments: true
+      }
+    }, {
+      resolve: 'gatsby-plugin-html-minifier',
+      options: {
+        caseSensitive: false,
+        collapseBooleanAttributes: false,
+        useShortDoctype: false
+      }
+    }]
 };

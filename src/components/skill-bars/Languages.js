@@ -18,7 +18,7 @@ const Languages = ({ color }) => {
     React.useEffect(() => {
         console.log("Update")
         console.log("Current Languages: " + color)
-    }, [color])
+    })
 
     return (
         <SkillDetails>

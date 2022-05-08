@@ -248,7 +248,7 @@ const Projects = () => {
                             <span>UI/UX</span>
                             <span>Project Management</span>
                         </div>
-                        <a className="project-button" target="_blank">More about Gengo</a>
+                        <a className="project-button" target="_blank" rel="noopener noreferrer">More about Gengo</a>
                     </Description>
                 </FeaturedProject>
 
@@ -262,7 +262,7 @@ const Projects = () => {
                             <span>JavaScript</span>
                             <span>Responsive Design</span>
                         </div>
-                        <a className="project-button" href='https://www.behance.net/gallery/130902295/SENA-Territorium-Minimal-Redesign' target="_blank">See on Behance</a>
+                        <a className="project-button" href='https://www.behance.net/gallery/130902295/SENA-Territorium-Minimal-Redesign' target="_blank" rel="noopener noreferrer">See on Behance</a>
                     </Description>
                     <Device className='devices'>
                         <div className='notch'></div>

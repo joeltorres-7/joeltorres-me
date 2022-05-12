@@ -84,7 +84,7 @@ const NotFoundPage = () => {
       <BackDots />
       <NotFoundLayout>
         <h2>Gengo</h2>
-        <h3>The page you're looking for doesn't exist or has been moved.</h3>
+        <h3>Hey there! This page is still being built...<br/>But, it'll be available later! :D</h3>
         <Link to="/" className="project-button" target="_blank" rel="noopener noreferrer">Go Home</Link>
       </NotFoundLayout>
     </Layout>

@@ -44,6 +44,10 @@ const GlobalStyles = createGlobalStyle`
 
     p {
         font-size: .9rem;
+
+        &.section-title {
+            line-height: 1.3rem;
+        }
     }
 
     // OnScroll Animations
@@ -104,7 +108,7 @@ const GlobalStyles = createGlobalStyle`
         }
         100% {
             opacity: 1;
-            transform: translateY(0rem);
+            transform: translateY(-2rem);
         }
     }
 
@@ -114,7 +118,7 @@ const GlobalStyles = createGlobalStyle`
             transform: translateY(-2rem);
         }
         100% {
-            margin-top: 2rem;
+            margin-top: 1rem;
             opacity: 1;
             transform: translateY(0rem);
         }

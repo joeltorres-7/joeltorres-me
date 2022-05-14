@@ -203,7 +203,7 @@ const About = () => {
 
     return (
         <Layout>
-            <SectionAbout ref={ domRef } className={ isVisible ? ' fade-in-top' : '' }>
+            <SectionAbout id="about" ref={ domRef } className={ isVisible ? ' fade-in-top' : '' }>
                 <h2>Who am I?</h2>
                 <p className='section-title'>I'm Joel, a 19-year-old guy who enjoys creating things for the world.<br /><br />I consider myself as a constant learner, this is the reason why I have knowledge and +3 years of experience in Web & Mobile Development, UI/UX Design and Language Teaching.</p>
                 <img loading='lazy' src={selfPortrait} alt='Portrait image of Joel Torres.' />

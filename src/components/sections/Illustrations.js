@@ -132,7 +132,7 @@ const Illustrations = () => {
         <Layout>
             <SectionIllustrations id="illustrations" ref={ domRef } className={ isVisible ? ' fade-in-top' : '' }>
                 <h2>Illustrations</h2>
-                <p className='section-title'>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
+                <p className='section-title'>Besides designing, developing, and testing websites and mobile apps, I love transforming ideas into illustrations for my designs.<br/><br/>Want to give them a look?</p>
 
                 <IllustratorContainer>
                     <IllustratorGuide>

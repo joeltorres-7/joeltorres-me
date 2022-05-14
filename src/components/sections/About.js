@@ -8,6 +8,7 @@ import Languages from '../skill-bars/Languages';
 import PropTypes from 'prop-types';
 
 const SectionAbout = styled.section`
+    opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +19,7 @@ const SectionAbout = styled.section`
 
     h2 {
         display: inline-flex;
-        margin-top: 1rem;
+        padding-top: 12rem;
         margin-bottom: 3rem;
         color: #EF476F;
     }
@@ -56,13 +57,14 @@ const SectionAbout = styled.section`
 `;
 
 const StructureData = styled.div`
+    opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 0 2rem 0;
     min-height: 100vh;
-    margin-top: 2rem;
+    margin-top: 12rem;
 
     h3 {
         display: inline-flex;
@@ -174,20 +176,43 @@ const About = () => {
     }
     `
 
+    // OnScroll Animations
+
+    const domRef = React.useRef();
+    const [isVisible, setVisible] = React.useState(false);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            // In your case there's only one element to observe:     
+            if (entries[0].isIntersecting) {
+            
+              // Not possible to set it back to false like this:
+              setVisible(true);
+              
+              // No need to keep observing:
+              observer.unobserve(domRef.current);
+            }
+          }, {rootMargin: '50%'});
+          
+          observer.observe(domRef.current);
+          
+          return () => observer.unobserve(domRef.current);
+    })
+
     // View
 
     return (
         <Layout>
-            <SectionAbout id="about">
+            <SectionAbout ref={ domRef } className={ isVisible ? ' fade-in-top' : '' }>
                 <h2>Who am I?</h2>
                 <p className='section-title'>I'm Joel, a 19-year-old guy who enjoys creating things for the world.<br /><br />I consider myself as a constant learner, this is the reason why I have knowledge and +3 years of experience in Web & Mobile Development, UI/UX Design and Language Teaching.</p>
                 <img loading='lazy' src={selfPortrait} alt='Portrait image of Joel Torres.' />
             </SectionAbout>
-            <StructureData>
+            <StructureData id="structured" ref={ domRef } className={ isVisible ? ' fade-in-top' : '' }>
                 <h3 className='section-subtitle'>Do you like structured data?</h3>
                 <p className='section-title'>Here are some of my skills and technologies I've worked with so far:</p>
 
-                <SkillsContainer>
+                <SkillsContainer ref={ domRef } className={ isVisible ? ' fade-in-down' : '' }>
                     <SkillGuide className='skill-styles'>
                         <svg onClick={previousSkill} className="back-skill" viewBox="-100.9 99.1 61.9 105.9" fill="#FFD166" width="12px" margin-right="4px"><path d="M-98.2 158.8l43.5 43.5c1.7 1.7 4 2.7 6.5 2.7s4.8-1 6.5-2.7c1.7-1.7 2.7-4 2.7-6.5s-1-4.8-2.7-6.5l-37.2-37.2 37.2-37.2c1.7-1.7 2.7-4 2.7-6.5s-1-4.8-2.6-6.5c-1.8-1.9-4.2-2.8-6.6-2.8-2.3 0-4.6.9-6.5 2.6-11.5 11.4-41.2 41-43.3 43l-.2.2c-3.6 3.6-3.6 10.3 0 13.9z"></path></svg>
                         <h4 id='skillset-title'>{currentSkillTitle}</h4>

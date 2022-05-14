@@ -60,9 +60,35 @@ const LetsTalkSection = styled.div`
 `
 
 const LetsTalk = () => {
+
+    // OnScroll Animations
+
+    const domRef = React.useRef();
+    const [isVisible, setVisible] = React.useState(false);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            // In your case there's only one element to observe:     
+            if (entries[0].isIntersecting) {
+            
+              // Not possible to set it back to false like this:
+
+                setVisible(true);
+                observer.unobserve(domRef.current);
+        
+            }
+          }, {rootMargin: '0%'});
+
+          observer.observe(domRef.current);
+          
+          return () => {
+            observer.unobserve(domRef.current)
+          };
+    })
+
     return (
         <Layout>
-            <LetsTalkSection id="lets-talk">
+            <LetsTalkSection id="lets-talk" ref={ domRef } className={ isVisible ? ' fade-in-default' : '' }>
                 <h2>Let's change the world<br/>together!</h2>
                 <p className='section-title'>I'm always open to new ideas, opportunities, and interactions. Anyway, I think anyone can change and improve the world :)</p>
                 <img className='medium' src={ Art.happy } alt='An image of happy cat.' />

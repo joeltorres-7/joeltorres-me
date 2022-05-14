@@ -11,6 +11,7 @@ import SenaPoster from '../../images/elements/sena-responsive-poster.webp';
 // Styles
 
 const SectionProjects = styled.section`
+    opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,6 +55,7 @@ const SectionProjects = styled.section`
 `;
 
 const FeaturedProject = styled.div`
+    opacity: 0;
     display: flex;
     flex-direction: row;
     margin: 5rem 0;
@@ -227,13 +229,71 @@ const Description = styled.div`
 `;
 
 const Projects = () => {
+
+    // OnScroll Animations
+
+    const domRef = React.useRef();
+    const domRefGengo = React.useRef();
+    const domRefSena = React.useRef();
+    const [isVisible, setVisible] = React.useState(false);
+    const [isGengoVisible, setGengoVisible] = React.useState(false);
+    const [isSenaVisible, setSenaVisible] = React.useState(false);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            // In your case there's only one element to observe:     
+            if (entries[0].isIntersecting) {
+            
+              // Not possible to set it back to false like this:
+
+                setVisible(true);
+                observer.unobserve(domRef.current);
+        
+            }
+          }, {rootMargin: '0%'});
+
+          const observerGengo = new IntersectionObserver(entries => {
+            // In your case there's only one element to observe:     
+            if (entries[0].isIntersecting) {
+            
+              // Not possible to set it back to false like this:
+            
+                setGengoVisible(true)
+                observer.unobserve(domRefGengo.current);
+        
+            }
+          }, {rootMargin: '0%'});
+
+          const observerSena = new IntersectionObserver(entries => {
+            // In your case there's only one element to observe:     
+            if (entries[0].isIntersecting) {
+            
+              // Not possible to set it back to false like this:
+
+                setSenaVisible(true);
+                observer.unobserve(domRefSena.current);
+        
+            }
+          }, {rootMargin: '0%'});
+          
+          observer.observe(domRef.current);
+          observerGengo.observe(domRefGengo.current);
+          observerSena.observe(domRefSena.current);
+          
+          return () => {
+            observer.unobserve(domRef.current)
+            observer.unobserve(domRefGengo.current)
+            observer.unobserve(domRefSena.current)
+          };
+    })
+
     return (
         <Layout>
-            <SectionProjects id="projects" >
+            <SectionProjects id="projects" ref={ domRef } className={ isVisible ? ' fade-in-top' : '' }>
                 <h2>Projects</h2>
                 <p className='section-title'>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
 
-                <FeaturedProject id='featured-gengo'>
+                <FeaturedProject id='featured-gengo' ref={ domRefGengo } className={ isGengoVisible ? ' fade-in-right' : '' }>
                     <Device className='devices'>
                         <div className='notch'></div>
                         <video loop muted autoplay="autoplay" width="200" className='preview' disablePictureInPicture controlsList="nodownload">
@@ -253,7 +313,7 @@ const Projects = () => {
                     </Description>
                 </FeaturedProject>
 
-                <FeaturedProject id='featured-sena'>
+                <FeaturedProject id='featured-sena' ref={ domRefSena } className={ isSenaVisible ? ' fade-in-left' : '' }>
                     <Description className='right project-description'>
                         <img loading='lazy' src={SenaLogo} alt='Logo for Sena Responsive Redesign project.' />
                         <p className='project-text'>As an opportunity to improve the design, responsiveness and accessibility from SENA Territorium, a Colombian web platform used for educational purposes, I gave my first steps in Web Design & Development through this project.</p>

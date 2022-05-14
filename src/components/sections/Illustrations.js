@@ -5,6 +5,7 @@ import Vector from '../illustration-genre/Vector';
 import Illustration from '../illustration-genre/Illustration';
 
 const SectionIllustrations = styled.div`
+    opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,9 +103,34 @@ const Illustrations = () => {
     }
 `
 
+    // OnScroll Animations
+
+    const domRef = React.useRef();
+    const [isVisible, setVisible] = React.useState(false);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            // In your case there's only one element to observe:     
+            if (entries[0].isIntersecting) {
+            
+              // Not possible to set it back to false like this:
+
+                setVisible(true);
+                observer.unobserve(domRef.current);
+        
+            }
+          }, {rootMargin: '0%'});
+
+          observer.observe(domRef.current);
+          
+          return () => {
+            observer.unobserve(domRef.current)
+          };
+    })
+
     return (
         <Layout>
-            <SectionIllustrations id="illustrations">
+            <SectionIllustrations id="illustrations" ref={ domRef } className={ isVisible ? ' fade-in-top' : '' }>
                 <h2>Illustrations</h2>
                 <p className='section-title'>The majority of my projects start with the vision of helping someone reach a goal or learn a new skill.<br/><br/>Here are some of them:</p>
 

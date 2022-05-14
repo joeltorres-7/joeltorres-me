@@ -9,6 +9,14 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
     }
 
+    * {
+        -ms-overflow-style: none;
+    }
+    
+    ::-webkit-scrollbar {
+        display: none;
+    }   
+
     body {
         display: flex;
         flex-direction: column;
@@ -36,6 +44,102 @@ const GlobalStyles = createGlobalStyle`
 
     p {
         font-size: .9rem;
+    }
+
+    // OnScroll Animations
+
+    .fade-in-default {
+        -webkit-animation: fadeInAnimationDefault 1.2s both;
+        -moz-animation: fadeInAnimationDefault 1.2s both;
+        -o-animation: fadeInAnimationDefault 1.2s both;
+        animation: fadeInAnimationDefault 1.2s both;
+        animation-fill-mode: forwards;
+    }
+
+    .fade-in-top {
+        -webkit-animation: fadeInAnimation 1.4s both;
+        -moz-animation: fadeInAnimation 1.4s both;
+        -o-animation: fadeInAnimation 1.4s both;
+        animation: fadeInAnimation 1.4s both;
+        animation-fill-mode: forwards;
+    }
+
+    .fade-in-down {
+        -webkit-animation: fadeInAnimationOff 1.2s both;
+        -moz-animation: fadeInAnimationOff 1.2s both;
+        -o-animation: fadeInAnimationOff 1.2s both;
+        animation: fadeInAnimationOff 1.2s both;
+        animation-fill-mode: forwards;
+    }
+
+    .fade-in-right {
+        -webkit-animation: fadeRightAnimation 1.2s both;
+        -moz-animation: fadeRightAnimation 1.2s both;
+        -o-animation: fadeRightAnimation 1.2s both;
+        animation: fadeRightAnimation 1.2s both;
+        animation-fill-mode: forwards;
+    }
+
+    .fade-in-left {
+        -webkit-animation: fadeLeftAnimation 1.2s both;
+        -moz-animation: fadeLeftAnimation 1.2s both;
+        -o-animation: fadeLeftAnimation 1.2s both;
+        animation: fadeLeftAnimation 1.2s both;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeInAnimationDefault {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+            transform: translateY(4rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0rem);
+        }
+    }
+
+    @keyframes fadeInAnimationOff {
+        0% {
+            opacity: 0;
+            transform: translateY(-2rem);
+        }
+        100% {
+            margin-top: 2rem;
+            opacity: 1;
+            transform: translateY(0rem);
+        }
+    }
+
+    @keyframes fadeRightAnimation {
+        0% {
+            opacity: 0;
+            transform: translateX(-2rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0rem);
+        }
+    }
+
+    @keyframes fadeLeftAnimation {
+        0% {
+            opacity: 0;
+            transform: translateX(2rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0rem);
+        }
     }
 
     // Queries: Width

@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Joel Torres`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.joeltorres.me`
   },
-  plugins: ["gatsby-plugin-styled-components", 'gatsby-plugin-netlify', "gatsby-plugin-react-helmet", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", 
+  plugins: ["gatsby-plugin-styled-components", 'gatsby-plugin-sitemap', 'gatsby-plugin-netlify', "gatsby-plugin-react-helmet", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", 
   {
     resolve: 'gatsby-source-filesystem',
     options: {
@@ -53,5 +53,19 @@ module.exports = {
         collapseBooleanAttributes: false,
         useShortDoctype: false
       }
-    }]
+    }, {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-QRHSRHX3DT",
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        pageTransitionDelay: 0,
+        defer: false,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        enableWebVitalsTracking: true,
+      },
+    },]
 };

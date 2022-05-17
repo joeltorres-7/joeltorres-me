@@ -26,9 +26,9 @@
 
 | Color                  | Hex                                                                |
 | ---------------------- | ------------------------------------------------------------------ |
-| Paradise Pink          | ![#EF476F](https://via.placeholder.com/10/EF476F?text=+) `#0a192f` |
-| Orange Yellow Crayola  | ![#FFD166](https://via.placeholder.com/10/FFD166?text=+) `#112240` |
-| Caribbean Green        | ![#06D6A0](https://via.placeholder.com/10/06D6A0?text=+) `#233554` |
-| Blue NCS               | ![#118AB2](https://via.placeholder.com/10/118AB2?text=+) `#8892b0` |
-| Midnight Green         | ![#073B4C](https://via.placeholder.com/10/073B4C?text=+) `#a8b2d1` |
-| White                  | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ccd6f6` |
+| Paradise Pink          | ![#EF476F](https://via.placeholder.com/10/EF476F?text=+) `#EF476F` |
+| Orange Yellow Crayola  | ![#FFD166](https://via.placeholder.com/10/FFD166?text=+) `#FFD166` |
+| Caribbean Green        | ![#06D6A0](https://via.placeholder.com/10/06D6A0?text=+) `#06D6A0` |
+| Blue NCS               | ![#118AB2](https://via.placeholder.com/10/118AB2?text=+) `#118AB2` |
+| Midnight Green         | ![#073B4C](https://via.placeholder.com/10/073B4C?text=+) `#073B4C` |
+| White                  | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |

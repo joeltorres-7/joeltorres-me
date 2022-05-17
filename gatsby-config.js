@@ -60,14 +60,12 @@ module.exports = {
           'UA-228930985-1',
         ],
         gtagConfig: {
-          optimize_id: 'OPT_CONTAINER_ID',
           anonymize_ip: true,
           cookie_expires: 0,
         },
         pluginConfig: {
-          head: false,
+          head: true,
           respectDNT: true,
-          exclude: ['/preview/**', '/do-not-track/me/too/'],
         },
       },
     },]

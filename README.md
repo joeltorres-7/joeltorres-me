@@ -12,7 +12,7 @@
 
 ## About this Repo 👨‍💻
 
-<p align="center">First iteration of <a href="www.joeltorres.me">joeltorres.me</a>, build with GatsbyJS and hosted with Netlify.</p>
+<p align="center">First iteration of <a href="https://joeltorres.me">joeltorres.me</a>, build with GatsbyJS and hosted with Netlify.</p>
 
 ## Screenshots! 📷
 

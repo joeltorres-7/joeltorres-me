@@ -1,0 +1,78 @@
+/* These lines contain the styles for the Splash Screen. Since it will take longer to load
+on JS, this way it won't get messy on a first time load. */
+#splash-container {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#splash-container #splash-logo {
+  fill: #fff;
+  margin: auto;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-animation: rainbow 4s linear infinite;
+          animation: rainbow 4s linear infinite;
+  -webkit-box-shadow: 2px 4px 10px rgba(239, 71, 111, 0.6);
+  box-shadow: 2px 4px 10px rgba(239, 71, 111, 0.6);
+  opacity: 0;
+}
+
+#splash-container .fade-out {
+  opacity: 0;
+  display: none;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    fill: #EF476F;
+  }
+  25% {
+    fill: #FFD166;
+  }
+  50% {
+    fill: #118AB2;
+  }
+  75% {
+    fill: #06D6A0;
+  }
+  100% {
+    fill: #EF476F;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    fill: #EF476F;
+  }
+  25% {
+    fill: #FFD166;
+  }
+  50% {
+    fill: #118AB2;
+  }
+  75% {
+    fill: #06D6A0;
+  }
+  100% {
+    fill: #EF476F;
+  }
+}
+/*# sourceMappingURL=splash.css.map */

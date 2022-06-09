@@ -1,0 +1,47 @@
+/* These lines contain the styles for the Splash Screen. Since it will take longer to load
+on JS, this way it won't get messy on a first time load. */
+
+#splash-container {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    transition: 1s;
+
+    #splash-logo {
+        fill: #fff;
+        margin: auto;
+        transition-duration: 1s;
+        animation: rainbow 4s linear infinite;
+        -moz-box-shadow: 2px 4px 10px rgba(239, 71, 111, 0.6);
+        -webkit-box-shadow: 2px 4px 10px rgba(239, 71, 111, 0.6);
+        box-shadow: 2px 4px 10px rgba(239, 71, 111, 0.6);
+        opacity: 0;
+    }
+
+    .fade-out {
+        opacity: 0;
+        display: none;
+        transition: ease-in-out;
+    }
+
+    @keyframes rainbow {
+        0% {
+            fill: #EF476F;
+        } 25% {
+            fill: #FFD166;
+        } 50% {
+            fill: #118AB2;
+        } 75% {
+            fill: #06D6A0;
+        } 100% {
+            fill: #EF476F;
+        }
+    }
+}

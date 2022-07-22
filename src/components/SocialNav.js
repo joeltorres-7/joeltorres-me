@@ -10,7 +10,7 @@ const StyledSocialNav = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 0 2rem;
+    margin: 0 0 0 3rem;
     padding: 0;
     list-style: none;
 

@@ -21,24 +21,27 @@ const Splash = () => {
             .add({
                 targets: '#splash-logo',
                 opacity: 0,
-                duration: 200,
+                delay: 0,
+                duration: 100,
             }).add({
                 targets: '#splash-logo',
                 opacity: 100,
-                duration: 5000,
+                delay: 0,
+                duration: 2000,
             }).add({
                 targets: '#splash-logo',
                 opacity: 0,
-                duration: 200,
+                delay: 0,
+                duration: 100,
             }).add({
                 targets: '#splash-container',
                 opacity: 0,
-                delay: 500,
-                duration: 200,
+                delay: 100,
+                duration: 100,
             }).add({
                 targets: '#splash-container',
                 display: 'none',
-                delay: 700,
+                delay: 600,
                 duration: 0,
             })
     };

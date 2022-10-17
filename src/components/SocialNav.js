@@ -62,7 +62,7 @@ const StyledSocialNav = styled.ul`
 const SocialNav = () => {
     return (
         <StyledSocialNav id='social-nav'>
-            <a href='https://twitter.com/JoelTorres_7' target="_blank" rel="noopener noreferrer">
+            <a href='https://twitter.com/_thisisjoel' target="_blank" rel="noopener noreferrer">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     role="img"
